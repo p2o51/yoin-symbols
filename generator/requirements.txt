@@ -1,0 +1,4 @@
+# Pinned so every machine produces byte-identical fonts (CI compares the output).
+shapely==2.1.2
+fonttools==4.62.1
+brotli==1.2.0

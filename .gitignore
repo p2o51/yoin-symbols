@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Gradle / Android
+.gradle/
+.kotlin/
+build/
+local.properties
+*.iml
+.idea/
+captures/
+.cxx/
+
+# Node
+node_modules/
+*.tgz
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+flutter/pubspec.lock
+flutter/example/pubspec.lock
+flutter/example/build/
+
+# OS
+.DS_Store

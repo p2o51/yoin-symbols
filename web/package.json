@@ -1,0 +1,62 @@
+{
+  "name": "yoin-symbols",
+  "version": "0.1.0",
+  "description": "Yoin Symbols: light, rounded line icons with continuous-curvature containers. SVG, React, sprite and icon font.",
+  "keywords": [
+    "icons",
+    "svg",
+    "react",
+    "icon-font",
+    "yoin",
+    "line-icons",
+    "material-3-expressive"
+  ],
+  "license": "MIT",
+  "author": "p2o51",
+  "homepage": "https://github.com/p2o51/yoin-symbols#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p2o51/yoin-symbols.git",
+    "directory": "web"
+  },
+  "bugs": {
+    "url": "https://github.com/p2o51/yoin-symbols/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "default": "./dist/react.js"
+    },
+    "./sprite.svg": "./dist/sprite.svg",
+    "./meta.json": "./dist/meta.json",
+    "./svg/*": "./svg/*",
+    "./font/*": "./font/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "svg",
+    "font",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
+}

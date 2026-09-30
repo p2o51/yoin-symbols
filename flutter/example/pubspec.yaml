@@ -1,0 +1,15 @@
+name: yoin_symbols_example
+description: A gallery of every Yoin symbol.
+publish_to: none
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  yoin_symbols:
+    path: ../
+
+flutter:
+  uses-material-design: true

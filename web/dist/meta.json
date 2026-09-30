@@ -1,0 +1,785 @@
+{
+ "version": "0.1.0",
+ "groups": {
+  "nav": "Navigation & actions",
+  "music": "Playback & music",
+  "content": "Content & notes",
+  "device": "Devices & services"
+ },
+ "symbols": [
+  {
+   "name": "home",
+   "zh": "主页",
+   "group": "nav",
+   "codepoint": "E000",
+   "material": [
+    "Home"
+   ]
+  },
+  {
+   "name": "home_filled",
+   "zh": "主页（选中）",
+   "group": "nav",
+   "codepoint": "E001",
+   "material": [
+    "Home"
+   ]
+  },
+  {
+   "name": "library",
+   "zh": "资料库",
+   "group": "nav",
+   "codepoint": "E002",
+   "material": [
+    "LibraryMusic"
+   ]
+  },
+  {
+   "name": "library_filled",
+   "zh": "资料库（选中）",
+   "group": "nav",
+   "codepoint": "E003",
+   "material": [
+    "LibraryMusic"
+   ]
+  },
+  {
+   "name": "search",
+   "zh": "搜索",
+   "group": "nav",
+   "codepoint": "E004",
+   "material": [
+    "Search"
+   ]
+  },
+  {
+   "name": "settings",
+   "zh": "设置",
+   "group": "nav",
+   "codepoint": "E005",
+   "material": [
+    "Settings"
+   ]
+  },
+  {
+   "name": "back",
+   "zh": "返回",
+   "group": "nav",
+   "codepoint": "E006",
+   "material": [
+    "ArrowBack"
+   ]
+  },
+  {
+   "name": "close",
+   "zh": "关闭 / 清除",
+   "group": "nav",
+   "codepoint": "E007",
+   "material": [
+    "Close",
+    "Clear"
+   ]
+  },
+  {
+   "name": "chevron_down",
+   "zh": "展开",
+   "group": "nav",
+   "codepoint": "E008",
+   "material": [
+    "KeyboardArrowDown",
+    "ExpandMore"
+   ]
+  },
+  {
+   "name": "chevron_up",
+   "zh": "收起",
+   "group": "nav",
+   "codepoint": "E009",
+   "material": [
+    "KeyboardArrowUp"
+   ]
+  },
+  {
+   "name": "chevron_right",
+   "zh": "进入",
+   "group": "nav",
+   "codepoint": "E00A",
+   "material": [
+    "ChevronRight",
+    "KeyboardArrowRight"
+   ]
+  },
+  {
+   "name": "chevron_left",
+   "zh": "后退一级",
+   "group": "nav",
+   "codepoint": "E00B",
+   "material": []
+  },
+  {
+   "name": "unfold_more",
+   "zh": "展开控件",
+   "group": "nav",
+   "codepoint": "E00C",
+   "material": [
+    "UnfoldMore"
+   ]
+  },
+  {
+   "name": "unfold_less",
+   "zh": "收起控件",
+   "group": "nav",
+   "codepoint": "E00D",
+   "material": [
+    "UnfoldLess"
+   ]
+  },
+  {
+   "name": "more_vertical",
+   "zh": "更多（竖）",
+   "group": "nav",
+   "codepoint": "E00E",
+   "material": [
+    "MoreVert"
+   ]
+  },
+  {
+   "name": "more_horizontal",
+   "zh": "更多（横）",
+   "group": "nav",
+   "codepoint": "E00F",
+   "material": []
+  },
+  {
+   "name": "add",
+   "zh": "添加",
+   "group": "nav",
+   "codepoint": "E010",
+   "material": [
+    "Add"
+   ]
+  },
+  {
+   "name": "check",
+   "zh": "确认 / 已选",
+   "group": "nav",
+   "codepoint": "E011",
+   "material": [
+    "Check"
+   ]
+  },
+  {
+   "name": "drag_handle",
+   "zh": "拖动手柄",
+   "group": "nav",
+   "codepoint": "E012",
+   "material": [
+    "DragHandle"
+   ]
+  },
+  {
+   "name": "edit",
+   "zh": "编辑",
+   "group": "nav",
+   "codepoint": "E013",
+   "material": [
+    "Edit"
+   ]
+  },
+  {
+   "name": "delete",
+   "zh": "删除",
+   "group": "nav",
+   "codepoint": "E014",
+   "material": [
+    "Delete"
+   ]
+  },
+  {
+   "name": "share",
+   "zh": "分享",
+   "group": "nav",
+   "codepoint": "E015",
+   "material": [
+    "IosShare"
+   ]
+  },
+  {
+   "name": "refresh",
+   "zh": "刷新 / 重新扫描",
+   "group": "nav",
+   "codepoint": "E016",
+   "material": [
+    "Refresh"
+   ]
+  },
+  {
+   "name": "launch",
+   "zh": "在外部打开",
+   "group": "nav",
+   "codepoint": "E017",
+   "material": [
+    "Launch"
+   ]
+  },
+  {
+   "name": "info",
+   "zh": "信息",
+   "group": "nav",
+   "codepoint": "E018",
+   "material": [
+    "Info"
+   ]
+  },
+  {
+   "name": "error",
+   "zh": "错误",
+   "group": "nav",
+   "codepoint": "E019",
+   "material": [
+    "ErrorOutline"
+   ]
+  },
+  {
+   "name": "error_filled",
+   "zh": "错误（实心）",
+   "group": "nav",
+   "codepoint": "E01A",
+   "material": [
+    "Error"
+   ]
+  },
+  {
+   "name": "visibility",
+   "zh": "显示",
+   "group": "nav",
+   "codepoint": "E01B",
+   "material": [
+    "Visibility"
+   ]
+  },
+  {
+   "name": "visibility_off",
+   "zh": "隐藏",
+   "group": "nav",
+   "codepoint": "E01C",
+   "material": [
+    "VisibilityOff"
+   ]
+  },
+  {
+   "name": "code",
+   "zh": "代码 / 开发者",
+   "group": "nav",
+   "codepoint": "E01D",
+   "material": [
+    "Code"
+   ]
+  },
+  {
+   "name": "send",
+   "zh": "发送",
+   "group": "nav",
+   "codepoint": "E01E",
+   "material": [
+    "Send"
+   ]
+  },
+  {
+   "name": "play_arrow",
+   "zh": "播放",
+   "group": "music",
+   "codepoint": "E01F",
+   "material": [
+    "PlayArrow"
+   ]
+  },
+  {
+   "name": "play_filled",
+   "zh": "播放（实心）",
+   "group": "music",
+   "codepoint": "E020",
+   "material": [
+    "PlayArrow"
+   ]
+  },
+  {
+   "name": "pause",
+   "zh": "暂停",
+   "group": "music",
+   "codepoint": "E021",
+   "material": []
+  },
+  {
+   "name": "pause_filled",
+   "zh": "暂停（实心）",
+   "group": "music",
+   "codepoint": "E022",
+   "material": []
+  },
+  {
+   "name": "skip_next",
+   "zh": "下一首",
+   "group": "music",
+   "codepoint": "E023",
+   "material": [
+    "SkipNext"
+   ]
+  },
+  {
+   "name": "skip_previous",
+   "zh": "上一首",
+   "group": "music",
+   "codepoint": "E024",
+   "material": [
+    "SkipPrevious"
+   ]
+  },
+  {
+   "name": "skip_next_filled",
+   "zh": "下一首（实心）",
+   "group": "music",
+   "codepoint": "E025",
+   "material": []
+  },
+  {
+   "name": "skip_previous_filled",
+   "zh": "上一首（实心）",
+   "group": "music",
+   "codepoint": "E026",
+   "material": []
+  },
+  {
+   "name": "shuffle",
+   "zh": "随机播放",
+   "group": "music",
+   "codepoint": "E027",
+   "material": [
+    "Shuffle"
+   ]
+  },
+  {
+   "name": "repeat",
+   "zh": "列表循环",
+   "group": "music",
+   "codepoint": "E028",
+   "material": []
+  },
+  {
+   "name": "repeat_one",
+   "zh": "单曲循环",
+   "group": "music",
+   "codepoint": "E029",
+   "material": []
+  },
+  {
+   "name": "playlist",
+   "zh": "歌单",
+   "group": "music",
+   "codepoint": "E02A",
+   "material": [
+    "QueueMusic"
+   ]
+  },
+  {
+   "name": "queue",
+   "zh": "播放队列",
+   "group": "music",
+   "codepoint": "E02B",
+   "material": [
+    "QueueMusic"
+   ]
+  },
+  {
+   "name": "music_note",
+   "zh": "单曲",
+   "group": "music",
+   "codepoint": "E02C",
+   "material": [
+    "MusicNote"
+   ]
+  },
+  {
+   "name": "album",
+   "zh": "专辑",
+   "group": "music",
+   "codepoint": "E02D",
+   "material": [
+    "Album"
+   ]
+  },
+  {
+   "name": "person",
+   "zh": "个人 / 账号",
+   "group": "music",
+   "codepoint": "E02E",
+   "material": [
+    "Person"
+   ]
+  },
+  {
+   "name": "artist",
+   "zh": "艺人",
+   "group": "music",
+   "codepoint": "E02F",
+   "material": []
+  },
+  {
+   "name": "favorite",
+   "zh": "收藏",
+   "group": "music",
+   "codepoint": "E030",
+   "material": [
+    "FavoriteBorder"
+   ]
+  },
+  {
+   "name": "favorite_filled",
+   "zh": "已收藏",
+   "group": "music",
+   "codepoint": "E031",
+   "material": [
+    "Favorite"
+   ]
+  },
+  {
+   "name": "star",
+   "zh": "评分",
+   "group": "music",
+   "codepoint": "E032",
+   "material": [
+    "StarBorder"
+   ]
+  },
+  {
+   "name": "star_filled",
+   "zh": "已评分",
+   "group": "music",
+   "codepoint": "E033",
+   "material": [
+    "Star"
+   ]
+  },
+  {
+   "name": "lyrics",
+   "zh": "歌词",
+   "group": "music",
+   "codepoint": "E034",
+   "material": []
+  },
+  {
+   "name": "translate",
+   "zh": "翻译",
+   "group": "music",
+   "codepoint": "E035",
+   "material": [
+    "Translate"
+   ]
+  },
+  {
+   "name": "recenter",
+   "zh": "回到当前句",
+   "group": "music",
+   "codepoint": "E036",
+   "material": [
+    "VerticalAlignCenter"
+   ]
+  },
+  {
+   "name": "equalizer",
+   "zh": "正在播放律动",
+   "group": "music",
+   "codepoint": "E037",
+   "material": [
+    "GraphicEq"
+   ]
+  },
+  {
+   "name": "sparkle",
+   "zh": "AI / 生成",
+   "group": "music",
+   "codepoint": "E038",
+   "material": [
+    "AutoAwesome"
+   ]
+  },
+  {
+   "name": "sparkle_filled",
+   "zh": "AI（进行中 / 已生成）",
+   "group": "music",
+   "codepoint": "E039",
+   "material": []
+  },
+  {
+   "name": "play_circle",
+   "zh": "播放（圆形）",
+   "group": "music",
+   "codepoint": "E03A",
+   "material": [
+    "PlayCircle"
+   ]
+  },
+  {
+   "name": "cast",
+   "zh": "投屏",
+   "group": "device",
+   "codepoint": "E03B",
+   "material": [
+    "Cast"
+   ]
+  },
+  {
+   "name": "cast_connected",
+   "zh": "已投屏",
+   "group": "device",
+   "codepoint": "E03C",
+   "material": [
+    "CastConnected"
+   ]
+  },
+  {
+   "name": "smartphone",
+   "zh": "手机",
+   "group": "device",
+   "codepoint": "E03D",
+   "material": [
+    "Smartphone"
+   ]
+  },
+  {
+   "name": "tablet",
+   "zh": "平板",
+   "group": "device",
+   "codepoint": "E03E",
+   "material": [
+    "Tablet"
+   ]
+  },
+  {
+   "name": "computer",
+   "zh": "电脑",
+   "group": "device",
+   "codepoint": "E03F",
+   "material": [
+    "Computer"
+   ]
+  },
+  {
+   "name": "tv",
+   "zh": "电视",
+   "group": "device",
+   "codepoint": "E040",
+   "material": [
+    "Tv"
+   ]
+  },
+  {
+   "name": "speaker",
+   "zh": "音箱",
+   "group": "device",
+   "codepoint": "E041",
+   "material": [
+    "Speaker"
+   ]
+  },
+  {
+   "name": "headphones",
+   "zh": "耳机 / 本机",
+   "group": "device",
+   "codepoint": "E042",
+   "material": [
+    "Headphones"
+   ]
+  },
+  {
+   "name": "devices",
+   "zh": "设备",
+   "group": "device",
+   "codepoint": "E043",
+   "material": [
+    "Devices"
+   ]
+  },
+  {
+   "name": "car",
+   "zh": "车载",
+   "group": "device",
+   "codepoint": "E044",
+   "material": [
+    "DirectionsCar"
+   ]
+  },
+  {
+   "name": "gamepad",
+   "zh": "游戏机",
+   "group": "device",
+   "codepoint": "E045",
+   "material": [
+    "SportsEsports"
+   ]
+  },
+  {
+   "name": "device_other",
+   "zh": "其他设备",
+   "group": "device",
+   "codepoint": "E046",
+   "material": [
+    "DeviceHub"
+   ]
+  },
+  {
+   "name": "cloud",
+   "zh": "服务器 / 云端",
+   "group": "device",
+   "codepoint": "E047",
+   "material": [
+    "CloudQueue"
+   ]
+  },
+  {
+   "name": "cloud_offline",
+   "zh": "离线",
+   "group": "device",
+   "codepoint": "E048",
+   "material": []
+  },
+  {
+   "name": "storage",
+   "zh": "缓存 / 存储",
+   "group": "device",
+   "codepoint": "E049",
+   "material": [
+    "Storage"
+   ]
+  },
+  {
+   "name": "folder",
+   "zh": "文件夹",
+   "group": "device",
+   "codepoint": "E04A",
+   "material": [
+    "Folder"
+   ]
+  },
+  {
+   "name": "download",
+   "zh": "下载 / 离线保存",
+   "group": "device",
+   "codepoint": "E04B",
+   "material": []
+  },
+  {
+   "name": "download_done",
+   "zh": "已下载",
+   "group": "device",
+   "codepoint": "E04C",
+   "material": []
+  },
+  {
+   "name": "volume_up",
+   "zh": "音量",
+   "group": "device",
+   "codepoint": "E04D",
+   "material": []
+  },
+  {
+   "name": "volume_mute",
+   "zh": "静音",
+   "group": "device",
+   "codepoint": "E04E",
+   "material": []
+  },
+  {
+   "name": "note",
+   "zh": "笔记",
+   "group": "content",
+   "codepoint": "E04F",
+   "material": [
+    "StickyNote2"
+   ]
+  },
+  {
+   "name": "edit_note",
+   "zh": "编辑笔记",
+   "group": "content",
+   "codepoint": "E050",
+   "material": [
+    "EditNote"
+   ]
+  },
+  {
+   "name": "reviews",
+   "zh": "乐评 / 评论",
+   "group": "content",
+   "codepoint": "E051",
+   "material": [
+    "Reviews"
+   ]
+  },
+  {
+   "name": "insights",
+   "zh": "统计 / 洞察",
+   "group": "content",
+   "codepoint": "E052",
+   "material": [
+    "Insights"
+   ]
+  },
+  {
+   "name": "explicit",
+   "zh": "Explicit 标记",
+   "group": "content",
+   "codepoint": "E053",
+   "material": []
+  },
+  {
+   "name": "sort",
+   "zh": "排序",
+   "group": "content",
+   "codepoint": "E054",
+   "material": []
+  },
+  {
+   "name": "filter",
+   "zh": "筛选",
+   "group": "content",
+   "codepoint": "E055",
+   "material": []
+  },
+  {
+   "name": "sleep",
+   "zh": "睡眠定时",
+   "group": "content",
+   "codepoint": "E056",
+   "material": []
+  },
+  {
+   "name": "speed",
+   "zh": "播放速度",
+   "group": "content",
+   "codepoint": "E057",
+   "material": []
+  },
+  {
+   "name": "memory",
+   "zh": "记忆（印章）",
+   "group": "content",
+   "codepoint": "E058",
+   "material": []
+  },
+  {
+   "name": "library_add",
+   "zh": "加入资料库",
+   "group": "content",
+   "codepoint": "E059",
+   "material": []
+  },
+  {
+   "name": "library_added",
+   "zh": "已加入资料库",
+   "group": "content",
+   "codepoint": "E05A",
+   "material": []
+  }
+ ]
+}
