@@ -42,6 +42,9 @@
 .ys-delete::before { content: "\e014"; }
 .ys-share::before { content: "\e015"; }
 .ys-refresh::before { content: "\e016"; }
+.ys-undo::before { content: "\e05b"; }
+.ys-open-in-full::before { content: "\e05c"; }
+.ys-close-fullscreen::before { content: "\e05d"; }
 .ys-launch::before { content: "\e017"; }
 .ys-info::before { content: "\e018"; }
 .ys-error::before { content: "\e019"; }
@@ -110,3 +113,4 @@
 .ys-memory::before { content: "\e058"; }
 .ys-library-add::before { content: "\e059"; }
 .ys-library-added::before { content: "\e05a"; }
+.ys-copy::before { content: "\e05e"; }

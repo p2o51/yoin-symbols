@@ -197,6 +197,34 @@ public object YoinSymbols {
         }
     }
 
+    /** 撤销 · `undo` */
+    public val Undo: ImageVector by lazy {
+        symbol("Undo", autoMirror = true) {
+            stroke("M8.75 19.15 L14.5 19.15 C17.206 19.15 19.4 16.956 19.4 14.25 C19.4 11.544 17.206 9.35 14.5 9.35 L4.75 9.35")
+            stroke("M9.25 4.85 L4.75 9.35 L9.25 13.85")
+        }
+    }
+
+    /** 展开到全屏 · `open_in_full` */
+    public val OpenInFull: ImageVector by lazy {
+        symbol("OpenInFull") {
+            stroke("M13.6 10.4 L19.25 4.75")
+            stroke("M14.65 4.75 L19.25 4.75 L19.25 9.35")
+            stroke("M10.4 13.6 L4.75 19.25")
+            stroke("M9.35 19.25 L4.75 19.25 L4.75 14.65")
+        }
+    }
+
+    /** 退出全屏 · `close_fullscreen` */
+    public val CloseFullscreen: ImageVector by lazy {
+        symbol("CloseFullscreen") {
+            stroke("M19.25 4.75 L13.6 10.4")
+            stroke("M18.2 10.4 L13.6 10.4 L13.6 5.8")
+            stroke("M4.75 19.25 L10.4 13.6")
+            stroke("M5.8 13.6 L10.4 13.6 L10.4 18.2")
+        }
+    }
+
     /** 在外部打开 · `launch` */
     public val Launch: ImageVector by lazy {
         symbol("Launch") {
@@ -799,6 +827,14 @@ public object YoinSymbols {
             stroke("M10.95 10.1 L13.15 12.3 L17.2 8.25")
         }
     }
+
+    /** 复制 · `copy` */
+    public val Copy: ImageVector by lazy {
+        symbol("Copy") {
+            stroke("M13.39 8.25 L15.11 8.25 C16.734 8.25 17.546 8.25 18.167 8.566 C18.712 8.844 19.156 9.288 19.434 9.833 C19.75 10.454 19.75 11.266 19.75 12.89 L19.75 16.11 C19.75 17.734 19.75 18.546 19.434 19.167 C19.156 19.712 18.712 20.156 18.167 20.434 C17.546 20.75 16.734 20.75 15.11 20.75 L13.39 20.75 C11.766 20.75 10.954 20.75 10.333 20.434 C9.788 20.156 9.344 19.712 9.066 19.167 C8.75 18.546 8.75 17.734 8.75 16.11 L8.75 12.89 C8.75 11.266 8.75 10.454 9.066 9.833 C9.344 9.288 9.788 8.844 10.333 8.566 C10.954 8.25 11.766 8.25 13.39 8.25 Z")
+            stroke("M6.85 16.198 C6.434 16.155 6.114 16.077 5.833 15.934 C5.288 15.656 4.844 15.212 4.566 14.667 C4.25 14.046 4.25 13.234 4.25 11.61 L4.25 8.39 C4.25 6.766 4.25 5.954 4.566 5.333 C4.844 4.788 5.288 4.344 5.833 4.066 C6.454 3.75 7.266 3.75 8.89 3.75 L8.89 3.75 L10.61 3.75 C12.234 3.75 13.046 3.75 13.667 4.066 C14.212 4.344 14.656 4.788 14.934 5.333 C15.077 5.614 15.155 5.934 15.198 6.35")
+        }
+    }
 }
 
 /** Every symbol by its canonical snake_case name, for galleries and pickers. */
@@ -827,6 +863,9 @@ public object YoinSymbolCatalog {
         "delete" to { YoinSymbols.Delete },
         "share" to { YoinSymbols.Share },
         "refresh" to { YoinSymbols.Refresh },
+        "undo" to { YoinSymbols.Undo },
+        "open_in_full" to { YoinSymbols.OpenInFull },
+        "close_fullscreen" to { YoinSymbols.CloseFullscreen },
         "launch" to { YoinSymbols.Launch },
         "info" to { YoinSymbols.Info },
         "error" to { YoinSymbols.Error },
@@ -895,5 +934,6 @@ public object YoinSymbolCatalog {
         "memory" to { YoinSymbols.Memory },
         "library_add" to { YoinSymbols.LibraryAdd },
         "library_added" to { YoinSymbols.LibraryAdded },
+        "copy" to { YoinSymbols.Copy },
     )
 }

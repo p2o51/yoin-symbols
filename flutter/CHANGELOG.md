@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- New symbol `undo` (navigation & actions, replaces `Icons.AutoMirrored.Rounded.Undo`): a hook arrow that turns back on itself, with a 9 × 4.5 chevron head. It flips in right-to-left layouts, like `back`.
+
 ## 0.1.0 · 2026-09-30
 
 First release.

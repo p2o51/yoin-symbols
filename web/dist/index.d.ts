@@ -24,6 +24,9 @@ export type YoinSymbolName =
   | "delete"
   | "share"
   | "refresh"
+  | "undo"
+  | "open_in_full"
+  | "close_fullscreen"
   | "launch"
   | "info"
   | "error"
@@ -91,7 +94,8 @@ export type YoinSymbolName =
   | "speed"
   | "memory"
   | "library_add"
-  | "library_added";
+  | "library_added"
+  | "copy";
 
 /** 主页 · home */
 export declare const Home: string;
@@ -139,6 +143,12 @@ export declare const Delete: string;
 export declare const Share: string;
 /** 刷新 / 重新扫描 · refresh */
 export declare const Refresh: string;
+/** 撤销 · undo */
+export declare const Undo: string;
+/** 展开到全屏 · open_in_full */
+export declare const OpenInFull: string;
+/** 退出全屏 · close_fullscreen */
+export declare const CloseFullscreen: string;
 /** 在外部打开 · launch */
 export declare const Launch: string;
 /** 信息 · info */
@@ -275,6 +285,8 @@ export declare const Memory: string;
 export declare const LibraryAdd: string;
 /** 已加入资料库 · library_added */
 export declare const LibraryAdded: string;
+/** 复制 · copy */
+export declare const Copy: string;
 
 export declare const symbols: Record<YoinSymbolName, string>;
 export declare const names: YoinSymbolName[];

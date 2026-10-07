@@ -57,7 +57,7 @@ The reference symbols are font outlines on a 960-unit em (960 units = 24 dp, y u
 - **Crossings:** where two lines cross, the lower line breaks 1.05 on each side of the upper one (3.6 centre line to centre line). `knock.cut(path, knock.around(over, 1.8))` cuts real Bézier segments, so the gap survives every export (shuffle, visibility_off, cloud_offline, devices).
 - **Filled twins:** the same centre line, filled and stroked at the same width, so the outer edge sits exactly on the outline version. Holes use even-odd (error_filled, library_filled).
 - **Filled play controls:** play_filled, pause_filled and skip_*_filled are straight-edged polygons whose corners come from the 0.75 round join. Play and pause have the same number of points, so they morph into each other.
-- **Right to left:** back, chevron_left, chevron_right and send flip in right-to-left layouts (Android `autoMirror`, Flutter `matchTextDirection`). Media controls keep their direction, as Material recommends.
+- **Right to left:** back, chevron_left, chevron_right, send and undo flip in right-to-left layouts (Android `autoMirror`, Flutter `matchTextDirection`). Media controls keep their direction, as Material recommends.
 
 ### Colour
 

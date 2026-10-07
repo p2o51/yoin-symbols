@@ -26,7 +26,7 @@ KOTLIN_PACKAGE = "com.gpo.yoin.symbols"
 RES_PREFIX = "ic_yoin_"
 # Directional symbols that flip in right-to-left layouts
 # (Android autoMirror, Flutter matchTextDirection). Media controls do not flip.
-MIRRORED = frozenset({"back", "chevron_left", "chevron_right", "send"})
+MIRRORED = frozenset({"back", "chevron_left", "chevron_right", "send", "undo"})
 NPM_NAME = "yoin-symbols"
 PUB_NAME = "yoin_symbols"
 FONT_FAMILY = "YoinSymbols"

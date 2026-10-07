@@ -58,6 +58,12 @@ export declare const Delete: YoinSymbolComponent;
 export declare const Share: YoinSymbolComponent;
 /** 刷新 / 重新扫描 · refresh */
 export declare const Refresh: YoinSymbolComponent;
+/** 撤销 · undo */
+export declare const Undo: YoinSymbolComponent;
+/** 展开到全屏 · open_in_full */
+export declare const OpenInFull: YoinSymbolComponent;
+/** 退出全屏 · close_fullscreen */
+export declare const CloseFullscreen: YoinSymbolComponent;
 /** 在外部打开 · launch */
 export declare const Launch: YoinSymbolComponent;
 /** 信息 · info */
@@ -194,6 +200,8 @@ export declare const Memory: YoinSymbolComponent;
 export declare const LibraryAdd: YoinSymbolComponent;
 /** 已加入资料库 · library_added */
 export declare const LibraryAdded: YoinSymbolComponent;
+/** 复制 · copy */
+export declare const Copy: YoinSymbolComponent;
 
 // `…Icon` aliases
 export declare const HomeIcon: YoinSymbolComponent;
@@ -219,6 +227,9 @@ export declare const EditIcon: YoinSymbolComponent;
 export declare const DeleteIcon: YoinSymbolComponent;
 export declare const ShareIcon: YoinSymbolComponent;
 export declare const RefreshIcon: YoinSymbolComponent;
+export declare const UndoIcon: YoinSymbolComponent;
+export declare const OpenInFullIcon: YoinSymbolComponent;
+export declare const CloseFullscreenIcon: YoinSymbolComponent;
 export declare const LaunchIcon: YoinSymbolComponent;
 export declare const InfoIcon: YoinSymbolComponent;
 export declare const ErrorIcon: YoinSymbolComponent;
@@ -287,3 +298,4 @@ export declare const SpeedIcon: YoinSymbolComponent;
 export declare const MemoryIcon: YoinSymbolComponent;
 export declare const LibraryAddIcon: YoinSymbolComponent;
 export declare const LibraryAddedIcon: YoinSymbolComponent;
+export declare const CopyIcon: YoinSymbolComponent;

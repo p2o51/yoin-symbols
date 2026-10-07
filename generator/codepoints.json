@@ -89,5 +89,9 @@
  "speed": 57431,
  "memory": 57432,
  "library_add": 57433,
- "library_added": 57434
+ "library_added": 57434,
+ "undo": 57435,
+ "open_in_full": 57436,
+ "close_fullscreen": 57437,
+ "copy": 57438
 }

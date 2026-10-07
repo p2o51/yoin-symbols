@@ -118,6 +118,20 @@ abstract final class YoinSymbols {
   static const IconData refresh =
       IconData(0xe016, fontFamily: fontFamily, fontPackage: fontPackage);
 
+  /// 撤销 · `undo`
+  static const IconData undo = IconData(0xe05b,
+      fontFamily: fontFamily,
+      fontPackage: fontPackage,
+      matchTextDirection: true);
+
+  /// 展开到全屏 · `open_in_full`
+  static const IconData openInFull =
+      IconData(0xe05c, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 退出全屏 · `close_fullscreen`
+  static const IconData closeFullscreen =
+      IconData(0xe05d, fontFamily: fontFamily, fontPackage: fontPackage);
+
   /// 在外部打开 · `launch`
   static const IconData launch =
       IconData(0xe017, fontFamily: fontFamily, fontPackage: fontPackage);
@@ -392,6 +406,10 @@ abstract final class YoinSymbols {
   static const IconData libraryAdded =
       IconData(0xe05a, fontFamily: fontFamily, fontPackage: fontPackage);
 
+  /// 复制 · `copy`
+  static const IconData copy =
+      IconData(0xe05e, fontFamily: fontFamily, fontPackage: fontPackage);
+
   /// Every symbol by its canonical snake_case name, for galleries and pickers.
   static const Map<String, IconData> all = <String, IconData>{
     'home': home,
@@ -417,6 +435,9 @@ abstract final class YoinSymbols {
     'delete': delete,
     'share': share,
     'refresh': refresh,
+    'undo': undo,
+    'open_in_full': openInFull,
+    'close_fullscreen': closeFullscreen,
     'launch': launch,
     'info': info,
     'error': error,
@@ -485,5 +506,6 @@ abstract final class YoinSymbols {
     'memory': memory,
     'library_add': libraryAdd,
     'library_added': libraryAdded,
+    'copy': copy,
   };
 }

@@ -214,6 +214,33 @@
    ]
   },
   {
+   "name": "undo",
+   "zh": "撤销",
+   "group": "nav",
+   "codepoint": "E05B",
+   "material": [
+    "Undo"
+   ]
+  },
+  {
+   "name": "open_in_full",
+   "zh": "展开到全屏",
+   "group": "nav",
+   "codepoint": "E05C",
+   "material": [
+    "OpenInFull"
+   ]
+  },
+  {
+   "name": "close_fullscreen",
+   "zh": "退出全屏",
+   "group": "nav",
+   "codepoint": "E05D",
+   "material": [
+    "CloseFullscreen"
+   ]
+  },
+  {
    "name": "launch",
    "zh": "在外部打开",
    "group": "nav",
@@ -780,6 +807,15 @@
    "group": "content",
    "codepoint": "E05A",
    "material": []
+  },
+  {
+   "name": "copy",
+   "zh": "复制",
+   "group": "content",
+   "codepoint": "E05E",
+   "material": [
+    "ContentCopy"
+   ]
   }
  ]
 }

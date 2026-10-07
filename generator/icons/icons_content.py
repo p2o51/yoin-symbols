@@ -146,3 +146,19 @@ def _():
 def _():
     front, back, (cx, cy) = _library_front_back()
     return [S(front, id="front"), S(back, id="back"), S(polyline([(cx - 3.05, cy + 0.1), (cx - 0.85, cy + 2.3), (cx + 3.2, cy - 1.75)]), id="check")]
+
+
+# ---------------------------------------------------------------- copy (a sheet in front of the one it copies)
+
+COPY_FRONT = (8.75, 8.25, 11.0, 12.5)
+
+
+@icon("copy", "content", "复制", replaces=["Icons.Rounded.ContentCopy"])
+def _():
+    # the library's sleeve-on-stack grammar: the front sheet whole, the back
+    # one only where it shows — cut a gap's width clear of the front
+    x, y, w, h = COPY_FRONT
+    back = squircle(4.25, 3.75, w, h, r=2.9, s=0.6)
+    back = cut(back, unary_union([box(x - 1.9, y - 1.9, 30, 30)]))
+    return [S(squircle(x, y, w, h, r=2.9, s=0.6)), S(back)]
+

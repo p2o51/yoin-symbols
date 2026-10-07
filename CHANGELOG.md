@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- New symbol `undo` (navigation & actions, replaces `Icons.AutoMirrored.Rounded.Undo`): a hook arrow that turns back on itself, with a 9 × 4.5 chevron head. It flips in right-to-left layouts, like `back`.
+- New symbol `copy` (content & notes, replaces `Icons.Rounded.ContentCopy`): a sheet in front of the one it copies, the back sheet cut a gap clear of the front — the `library` sleeve-on-stack grammar.
+- New symbols `open_in_full` and `close_fullscreen` (navigation & actions, replace `Icons.Rounded.OpenInFull` / `Icons.Rounded.CloseFullscreen`): two diagonals with `launch`'s square corner head, pointing out to the corners or in to the centre.
+
 ## 0.1.0 · 2026-09-30
 
 First release.

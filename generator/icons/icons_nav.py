@@ -254,6 +254,32 @@ def _():
     return [S(_refresh_arc()), S(_refresh_head())]
 
 
+@icon("undo", "nav", "撤销", replaces=["Icons.AutoMirrored.Rounded.Undo"])
+def _():
+    # tail -> round the right side, counter-clockwise -> along the top into a 9 x 4.5 chevron head
+    hook = [M(8.75, 19.15), L(14.5, 19.15)] + arc_cmds(14.5, 14.25, 4.9, 90, -90, move=False) + [L(4.75, 9.35)]
+    return [S(hook), S(polyline([(9.25, 4.85), (4.75, 9.35), (9.25, 13.85)]))]
+
+
+def _corner_arrow(x0, y0, x1, y1, head=4.6):
+    """A diagonal from (x0, y0) to (x1, y1) ending in launch's square corner head."""
+    sx = 1 if x1 > x0 else -1
+    sy = 1 if y1 > y0 else -1
+    return [S(line(x0, y0, x1, y1)), S(polyline([(x1 - sx * head, y1), (x1, y1), (x1, y1 - sy * head)]))]
+
+
+@icon("open_in_full", "nav", "展开到全屏", replaces=["Icons.Rounded.OpenInFull"])
+def _():
+    # two diagonals leaving the centre for the far corners
+    return _corner_arrow(13.6, 10.4, 19.25, 4.75) + _corner_arrow(10.4, 13.6, 4.75, 19.25)
+
+
+@icon("close_fullscreen", "nav", "退出全屏", replaces=["Icons.Rounded.CloseFullscreen"])
+def _():
+    # the same diagonals, heads turned in toward the centre
+    return _corner_arrow(19.25, 4.75, 13.6, 10.4) + _corner_arrow(4.75, 19.25, 10.4, 13.6)
+
+
 @icon("launch", "nav", "在外部打开", replaces=["Icons.Filled.Launch"])
 def _():
     boxp = squircle(4.5, 4.5, 15, 15, r=3.7, s=0.6)

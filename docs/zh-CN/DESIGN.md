@@ -57,7 +57,7 @@ Yoin Symbols 沿用 Google Luminous 符号的视觉语言：更细的线、更�
 - **交叉**：两条线交叉时，下层线条在上层两侧各断开 1.05（中线到中线 3.6）。`knock.cut(path, knock.around(over, 1.8))` 切出来的是真正的贝塞尔线段，任何导出都保留缝隙（shuffle、visibility_off、cloud_offline、devices）。
 - **实心版**：同一条中线，填充再加同宽描边，外沿与线框版完全重合。镂空用 even-odd（error_filled、library_filled）。
 - **实心播放控件**：play_filled、pause_filled、skip_*_filled 是直边多边形，角由 0.75 的圆角连接自然形成。播放和暂停点数相同，可以互相变形。
-- **从右到左**：back、chevron_left、chevron_right、send 在从右到左的布局里会镜像（Android 用 `autoMirror`，Flutter 用 `matchTextDirection`）。播放控件不镜像，和 Material 的建议一致。
+- **从右到左**：back、chevron_left、chevron_right、send、undo 在从右到左的布局里会镜像（Android 用 `autoMirror`，Flutter 用 `matchTextDirection`）。播放控件不镜像，和 Material 的建议一致。
 
 ### 颜色
 
