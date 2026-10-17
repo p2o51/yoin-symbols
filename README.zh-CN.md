@@ -2,7 +2,7 @@
 
 ![Yoin Symbols](docs/cover.png)
 
-一套轻、圆、容器带连续曲率的线条图标。91 个符号最初是为音乐播放器 Yoin 画的，现在从同一份源码生成 Jetpack Compose、Web、Flutter 和 Figma 四个版本。
+一套轻、圆、容器带连续曲率的线条图标。96 个符号最初是为音乐播放器 Yoin 画的，现在从同一份源码生成 Jetpack Compose、Web、Flutter 和 Figma 四个版本。
 
 [图库](https://p2o51.github.io/yoin-symbols/) · [Figma](https://www.figma.com/design/g0H4CfkagF8p1N4vuPYxQA) · [npm](https://www.npmjs.com/package/yoin-symbols) · [pub.dev](https://pub.dev/packages/yoin_symbols) · [Maven Central](https://central.sonatype.com/artifact/io.github.p2o51/yoin-symbols) · [English](README.md)
 

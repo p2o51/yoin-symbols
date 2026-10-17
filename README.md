@@ -2,7 +2,7 @@
 
 ![Yoin Symbols](docs/cover.png)
 
-Light, rounded line icons with continuous-curvature containers. 91 symbols drawn for the music player Yoin, packaged for Jetpack Compose, the web, Flutter and Figma from a single source.
+Light, rounded line icons with continuous-curvature containers. 96 symbols drawn for the music player Yoin, packaged for Jetpack Compose, the web, Flutter and Figma from a single source.
 
 [Gallery](https://p2o51.github.io/yoin-symbols/) · [Figma](https://www.figma.com/design/g0H4CfkagF8p1N4vuPYxQA) · [npm](https://www.npmjs.com/package/yoin-symbols) · [pub.dev](https://pub.dev/packages/yoin_symbols) · [Maven Central](https://central.sonatype.com/artifact/io.github.p2o51/yoin-symbols) · [中文](README.zh-CN.md)
 
