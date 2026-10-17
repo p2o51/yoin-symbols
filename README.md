@@ -49,7 +49,7 @@ These return a `Painter`, so they drop into any `Icon` and take its tint.
 | `rememberExpandSymbolPainter(expanded)` | The chevron flattens and folds over like a hinge |
 | `rememberEqualizerSymbolPainter(playing)` | Bars follow random levels, then sink into dots on a slow spring |
 | `rememberSparkleSymbolPainter(generating, filled)` | The star turns a quarter at a time, the small star blinks off-beat |
-| `rememberPlayModeSymbolPainter(mode)` | One play-mode button: repeat all → shuffle → repeat one. The loop is cut open and its lower half turns over into the crossing strand; the 1 pops in for repeat one |
+| `rememberPlayModeSymbolPainter(mode)` | One play-mode button: shuffle × repeat all / one, four modes. The loop is cut open and its lower half turns over into the crossing strand; the 1 pops in for repeat one, and rides into the wedge left of the crossing for shuffle + repeat one |
 
 ```kotlin
 Icon(
@@ -66,7 +66,7 @@ CompositionLocalProvider(LocalSymbolMotion provides SymbolMotion.Reduced) {
 }
 ```
 
-For the play-mode button, `SymbolPlayMode.next()` gives the mode after a tap. With Media3 the three modes map to `REPEAT_MODE_ALL`, `REPEAT_MODE_ALL` with `shuffleModeEnabled`, and `REPEAT_MODE_ONE`:
+For the play-mode button, `SymbolPlayMode.next()` gives the mode after a tap: repeat all → shuffle → shuffle + repeat one → repeat one, one change per tap. `shuffle` and `repeatOne` map to Media3's `shuffleModeEnabled` and `REPEAT_MODE_ONE` (otherwise `REPEAT_MODE_ALL`):
 
 ```kotlin
 var mode by rememberSaveable { mutableStateOf(SymbolPlayMode.RepeatAll) }

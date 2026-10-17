@@ -49,7 +49,7 @@ Icon(YoinSymbols.HomeFilled, contentDescription = null, tint = MaterialTheme.col
 | `rememberExpandSymbolPainter(expanded)` | 箭头先压平再翻折，像合页 |
 | `rememberEqualizerSymbolPainter(playing)` | 柱子追随随机高度，停止时以低刚度 spring 缩成圆点 |
 | `rememberSparkleSymbolPainter(generating, filled)` | 大星每次转 90° 后停一下，小星错拍闪烁 |
-| `rememberPlayModeSymbolPainter(mode)` | 一个播放模式按钮：列表循环 → 随机 → 单曲循环。环被剪开，下半股像翻牌一样翻成交叉的一股；单曲循环时「1」弹出 |
+| `rememberPlayModeSymbolPainter(mode)` | 一个播放模式按钮：随机 × 列表 / 单曲循环，共四种。环被剪开，下半股像翻牌一样翻成交叉的一股；单曲循环时「1」弹出，随机 + 单曲循环时「1」缩小滑进交叉左边的空隙 |
 
 ```kotlin
 Icon(
@@ -66,7 +66,7 @@ CompositionLocalProvider(LocalSymbolMotion provides SymbolMotion.Reduced) {
 }
 ```
 
-播放模式按钮用 `SymbolPlayMode.next()` 得到点一下之后的模式。三种模式对应 Media3 的 `REPEAT_MODE_ALL`、`REPEAT_MODE_ALL` 加 `shuffleModeEnabled`、`REPEAT_MODE_ONE`：
+播放模式按钮用 `SymbolPlayMode.next()` 得到点一下之后的模式：列表循环 → 随机 → 随机 + 单曲循环 → 单曲循环，每次只变一样。`shuffle` 和 `repeatOne` 对应 Media3 的 `shuffleModeEnabled` 和 `REPEAT_MODE_ONE`（否则是 `REPEAT_MODE_ALL`）：
 
 ```kotlin
 var mode by rememberSaveable { mutableStateOf(SymbolPlayMode.RepeatAll) }

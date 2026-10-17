@@ -269,6 +269,9 @@ def play_mode_geometry():
         head_cross_b_mirror=_head_pts(_head(4.0, 17.2, -1, 0, size=3.3)),
         one=[(10.95, 10.55), (12.35, 9.8), (12.35, 14.35)],
         one_c=(11.65, 12.1),
+        # shuffle + repeat one: the 1 sits smaller in the open wedge left of the crossing
+        one_cross_c=(6.0, 12.0),
+        one_cross_scale=0.72,
         gap_half=gap_half,
     )
 

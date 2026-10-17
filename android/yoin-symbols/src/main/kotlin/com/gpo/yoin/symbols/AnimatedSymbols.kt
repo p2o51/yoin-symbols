@@ -232,17 +232,24 @@ private fun MorphPolygon(from: FloatArray, to: FloatArray, t: Float) {
 // ---------------------------------------------------------------- play mode
 
 /**
- * The modes of a single play-mode button, in the order a tap cycles them:
- * repeat all → shuffle → repeat one → repeat all.
+ * The play modes a play-mode button shows: shuffle (off / on) × repeat (all / one), in the order
+ * a tap steps them — each step changes one of the two:
+ * repeat all → shuffle → shuffle + repeat one → repeat one → repeat all.
  *
- * With Media3 they map to `REPEAT_MODE_ALL`, `REPEAT_MODE_ALL` with
- * `shuffleModeEnabled`, and `REPEAT_MODE_ONE`.
+ * With Media3 they map to `REPEAT_MODE_ALL` / `REPEAT_MODE_ONE` and `shuffleModeEnabled`.
  */
 public enum class SymbolPlayMode {
     RepeatAll,
     Shuffle,
+    ShuffleRepeatOne,
     RepeatOne,
     ;
+
+    /** Whether the strands cross (shuffle on). */
+    public val shuffle: Boolean get() = this == Shuffle || this == ShuffleRepeatOne
+
+    /** Whether the 1 shows (repeat one). */
+    public val repeatOne: Boolean get() = this == RepeatOne || this == ShuffleRepeatOne
 
     /** The mode the next tap moves to. */
     public fun next(): SymbolPlayMode = entries[(ordinal + 1) % entries.size]
@@ -252,10 +259,12 @@ public enum class SymbolPlayMode {
  * One symbol for a play-mode button that cycles [SymbolPlayMode]s.
  *
  * Repeat all → shuffle: the loop is cut open, its upper half swings into the rising strand and
- * its lower half turns over like a card and passes underneath. Shuffle → repeat one: the strands
- * turn back into the loop and the 1 pops in after them. Repeat one → repeat all: the 1 shrinks
- * away and both arrows nudge along their direction. With [SymbolMotion.reduced] the symbol fades
- * out and comes back in the new mode instead.
+ * its lower half turns over like a card and passes underneath. Shuffle → shuffle + repeat one: the
+ * 1 pops in, smaller, in the open wedge left of the crossing. Shuffle + repeat one → repeat one:
+ * the strands turn back into the loop and the 1 slides with them to the loop's middle. Repeat
+ * one → repeat all: the 1 shrinks away and both arrows nudge along their direction. Any other
+ * change runs the same parts (the strands cross or uncross, the 1 pops in or out). With
+ * [SymbolMotion.reduced] the symbol fades out and comes back in the new mode instead.
  *
  * ```
  * var mode by rememberSaveable { mutableStateOf(SymbolPlayMode.RepeatAll) }
@@ -269,8 +278,8 @@ public fun rememberPlayModeSymbolPainter(
     mode: SymbolPlayMode,
     motion: SymbolMotion = LocalSymbolMotion.current,
 ): Painter {
-    val cross = remember { Animatable(if (mode == SymbolPlayMode.Shuffle) 1f else 0f) }
-    val one = remember { Animatable(if (mode == SymbolPlayMode.RepeatOne) 1f else 0f) }
+    val cross = remember { Animatable(if (mode.shuffle) 1f else 0f) }
+    val one = remember { Animatable(if (mode.repeatOne) 1f else 0f) }
     val nudge = remember { Animatable(0f) }
     val alpha = remember { Animatable(1f) }
     val shown = remember { arrayOf(mode) }
@@ -279,8 +288,8 @@ public fun rememberPlayModeSymbolPainter(
         val from = shown[0]
         shown[0] = mode
         if (from == mode) return@LaunchedEffect
-        val crossTarget = if (mode == SymbolPlayMode.Shuffle) 1f else 0f
-        val oneTarget = if (mode == SymbolPlayMode.RepeatOne) 1f else 0f
+        val crossTarget = if (mode.shuffle) 1f else 0f
+        val oneTarget = if (mode.repeatOne) 1f else 0f
         when {
             animationsOff() -> {
                 alpha.snapTo(1f)
@@ -299,7 +308,8 @@ public fun rememberPlayModeSymbolPainter(
                 launch { cross.animateTo(crossTarget, motion.spatial) }
                 launch {
                     if (oneTarget > 0f) {
-                        if (turning) delay(140L)
+                        // A 1 already showing just rides along with the strands.
+                        if (turning && one.value < 1f) delay(140L)
                         one.animateTo(oneTarget, motion.fastSpatial)
                     } else {
                         one.animateTo(0f, motion.control)
@@ -333,12 +343,18 @@ public fun rememberPlayModeSymbolPainter(
         }
         val s = one.value.coerceAtLeast(0f)
         if (s > 0.001f) {
+            // Over the loop the 1 sits in its middle; as the strands cross it slides, smaller, into
+            // the open wedge left of the crossing (shuffle + repeat one).
+            val at = t.coerceIn(0f, 1f)
+            val scale = s * lerp(1f, SymbolGeometry.PlayModeOneCrossScale, at)
             Group(
                 name = "one",
                 pivotX = SymbolGeometry.PlayModeOneX,
                 pivotY = SymbolGeometry.PlayModeOneY,
-                scaleX = s,
-                scaleY = s,
+                scaleX = scale,
+                scaleY = scale,
+                translationX = (SymbolGeometry.PlayModeOneCrossX - SymbolGeometry.PlayModeOneX) * at,
+                translationY = (SymbolGeometry.PlayModeOneCrossY - SymbolGeometry.PlayModeOneY) * at,
             ) {
                 HeadPath(SymbolGeometry.PlayModeOne, SymbolGeometry.PlayModeOne, 0f, 0f, a)
             }

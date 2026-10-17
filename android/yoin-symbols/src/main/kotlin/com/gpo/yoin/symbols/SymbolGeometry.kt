@@ -48,6 +48,9 @@ internal object SymbolGeometry {
     val PlayModeOne: FloatArray = floatArrayOf(10.95f, 10.55f, 12.35f, 9.8f, 12.35f, 14.35f)
     const val PlayModeOneX: Float = 11.65f
     const val PlayModeOneY: Float = 12.1f
+    const val PlayModeOneCrossX: Float = 6f
+    const val PlayModeOneCrossY: Float = 12f
+    const val PlayModeOneCrossScale: Float = 0.72f
     /** Half-width of the under strand's gap at the crossing, as a fraction of its length. */
     const val PlayModeGap: Float = 0.091f
 }

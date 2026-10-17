@@ -6,6 +6,7 @@
 - New symbol `copy` (content & notes, replaces `Icons.Rounded.ContentCopy`): a sheet in front of the one it copies, the back sheet cut a gap clear of the front — the `library` sleeve-on-stack grammar.
 - New symbols `open_in_full` and `close_fullscreen` (navigation & actions, replace `Icons.Rounded.OpenInFull` / `Icons.Rounded.CloseFullscreen`): two diagonals with `launch`'s square corner head, pointing out to the corners or in to the centre.
 - New symbol `light_mode` (content & notes, replaces `Icons.Rounded.LightMode`): a disc and eight short rays on one radius. Yoin uses it for keeping the screen on in Now Playing.
+- `SymbolPlayMode` has a fourth mode, `ShuffleRepeatOne`, and the order is now repeat all → shuffle → shuffle + repeat one → repeat one (one change per tap); `shuffle` and `repeatOne` read the two parts. In `rememberPlayModeSymbolPainter` the 1 rides with the strands into the open wedge left of the crossing, at 0.72 scale.
 
 ## 0.1.0 · 2026-09-30
 
