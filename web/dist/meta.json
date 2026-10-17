@@ -781,6 +781,15 @@
    "material": []
   },
   {
+   "name": "light_mode",
+   "zh": "屏幕常亮 / 浅色",
+   "group": "content",
+   "codepoint": "E05F",
+   "material": [
+    "LightMode"
+   ]
+  },
+  {
    "name": "speed",
    "zh": "播放速度",
    "group": "content",

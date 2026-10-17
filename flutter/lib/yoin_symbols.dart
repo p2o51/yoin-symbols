@@ -390,6 +390,10 @@ abstract final class YoinSymbols {
   static const IconData sleep =
       IconData(0xe056, fontFamily: fontFamily, fontPackage: fontPackage);
 
+  /// 屏幕常亮 / 浅色 · `light_mode`
+  static const IconData lightMode =
+      IconData(0xe05f, fontFamily: fontFamily, fontPackage: fontPackage);
+
   /// 播放速度 · `speed`
   static const IconData speed =
       IconData(0xe057, fontFamily: fontFamily, fontPackage: fontPackage);
@@ -502,6 +506,7 @@ abstract final class YoinSymbols {
     'sort': sort,
     'filter': filter,
     'sleep': sleep,
+    'light_mode': lightMode,
     'speed': speed,
     'memory': memory,
     'library_add': libraryAdd,

@@ -792,6 +792,21 @@ public object YoinSymbols {
         }
     }
 
+    /** 屏幕常亮 / 浅色 · `light_mode` */
+    public val LightMode: ImageVector by lazy {
+        symbol("LightMode") {
+            stroke("M12 8.45 C13.961 8.45 15.55 10.039 15.55 12 C15.55 13.961 13.961 15.55 12 15.55 C10.039 15.55 8.45 13.961 8.45 12 C8.45 10.039 10.039 8.45 12 8.45 Z")
+            stroke("M18.35 12 L20.35 12")
+            stroke("M16.49 16.49 L17.904 17.904")
+            stroke("M12 18.35 L12 20.35")
+            stroke("M7.51 16.49 L6.096 17.904")
+            stroke("M5.65 12 L3.65 12")
+            stroke("M7.51 7.51 L6.096 6.096")
+            stroke("M12 5.65 L12 3.65")
+            stroke("M16.49 7.51 L17.904 6.096")
+        }
+    }
+
     /** 播放速度 · `speed` */
     public val Speed: ImageVector by lazy {
         symbol("Speed") {
@@ -930,6 +945,7 @@ public object YoinSymbolCatalog {
         "sort" to { YoinSymbols.Sort },
         "filter" to { YoinSymbols.Filter },
         "sleep" to { YoinSymbols.Sleep },
+        "light_mode" to { YoinSymbols.LightMode },
         "speed" to { YoinSymbols.Speed },
         "memory" to { YoinSymbols.Memory },
         "library_add" to { YoinSymbols.LibraryAdd },

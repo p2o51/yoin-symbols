@@ -106,6 +106,15 @@ def _():
     return [S(crescent())]
 
 
+@icon("light_mode", "content", "屏幕常亮 / 浅色", replaces=["Icons.Rounded.LightMode"])
+def _():
+    # a sun: the disc and eight short rays on one radius, so the diagonals
+    # read the same length as the straight ones
+    cx, cy = 12.0, 12.0
+    rays = [S(line(*pt_on(cx, cy, 6.35, a), *pt_on(cx, cy, 8.35, a))) for a in range(0, 360, 45)]
+    return [S(circle(cx, cy, 3.55))] + rays
+
+
 @icon("speed", "content", "播放速度")
 def _():
     cx, cy, r = 12.0, 13.2, 8.2

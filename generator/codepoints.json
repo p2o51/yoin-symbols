@@ -93,5 +93,6 @@
  "undo": 57435,
  "open_in_full": 57436,
  "close_fullscreen": 57437,
- "copy": 57438
+ "copy": 57438,
+ "light_mode": 57439
 }

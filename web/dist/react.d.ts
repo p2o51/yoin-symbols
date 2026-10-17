@@ -192,6 +192,8 @@ export declare const Sort: YoinSymbolComponent;
 export declare const Filter: YoinSymbolComponent;
 /** 睡眠定时 · sleep */
 export declare const Sleep: YoinSymbolComponent;
+/** 屏幕常亮 / 浅色 · light_mode */
+export declare const LightMode: YoinSymbolComponent;
 /** 播放速度 · speed */
 export declare const Speed: YoinSymbolComponent;
 /** 记忆（印章） · memory */
@@ -294,6 +296,7 @@ export declare const ExplicitIcon: YoinSymbolComponent;
 export declare const SortIcon: YoinSymbolComponent;
 export declare const FilterIcon: YoinSymbolComponent;
 export declare const SleepIcon: YoinSymbolComponent;
+export declare const LightModeIcon: YoinSymbolComponent;
 export declare const SpeedIcon: YoinSymbolComponent;
 export declare const MemoryIcon: YoinSymbolComponent;
 export declare const LibraryAddIcon: YoinSymbolComponent;

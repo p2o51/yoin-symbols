@@ -91,6 +91,7 @@ export type YoinSymbolName =
   | "sort"
   | "filter"
   | "sleep"
+  | "light_mode"
   | "speed"
   | "memory"
   | "library_add"
@@ -277,6 +278,8 @@ export declare const Sort: string;
 export declare const Filter: string;
 /** 睡眠定时 · sleep */
 export declare const Sleep: string;
+/** 屏幕常亮 / 浅色 · light_mode */
+export declare const LightMode: string;
 /** 播放速度 · speed */
 export declare const Speed: string;
 /** 记忆（印章） · memory */

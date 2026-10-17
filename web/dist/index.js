@@ -180,6 +180,8 @@ export const Sort = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 
 export const Filter = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4.25 7 L19.75 7\"/><path d=\"M7.25 12 L16.75 12\"/><path d=\"M10.25 17 L13.75 17\"/></svg>";
 /** 睡眠定时 · sleep */
 export const Sleep = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10.594 3.82 C6.435 4.535 3.474 8.257 3.713 12.471 C3.953 16.684 7.316 20.047 11.529 20.287 C15.743 20.526 19.465 17.565 20.18 13.406 C17.441 15.269 13.764 14.922 11.421 12.579 C9.078 10.236 8.731 6.559 10.594 3.82 Z\"/></svg>";
+/** 屏幕常亮 / 浅色 · light_mode */
+export const LightMode = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 8.45 C13.961 8.45 15.55 10.039 15.55 12 C15.55 13.961 13.961 15.55 12 15.55 C10.039 15.55 8.45 13.961 8.45 12 C8.45 10.039 10.039 8.45 12 8.45 Z\"/><path d=\"M18.35 12 L20.35 12\"/><path d=\"M16.49 16.49 L17.904 17.904\"/><path d=\"M12 18.35 L12 20.35\"/><path d=\"M7.51 16.49 L6.096 17.904\"/><path d=\"M5.65 12 L3.65 12\"/><path d=\"M7.51 7.51 L6.096 6.096\"/><path d=\"M12 5.65 L12 3.65\"/><path d=\"M16.49 7.51 L17.904 6.096\"/></svg>";
 /** 播放速度 · speed */
 export const Speed = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5.046 17.545 C2.899 14.109 3.583 9.62 6.656 6.98 C9.73 4.34 14.27 4.34 17.344 6.98 C20.417 9.62 21.101 14.109 18.954 17.545\"/><path d=\"M12 13.2 L15.95 9.25\"/><path d=\"M12 11.75 C12.801 11.75 13.45 12.399 13.45 13.2 C13.45 14.001 12.801 14.65 12 14.65 C11.199 14.65 10.55 14.001 10.55 13.2 C10.55 12.399 11.199 11.75 12 11.75 Z\" fill=\"currentColor\" stroke=\"none\"/></svg>";
 /** 记忆（印章） · memory */
@@ -283,6 +285,7 @@ export const symbols = {
   "sort": Sort,
   "filter": Filter,
   "sleep": Sleep,
+  "light_mode": LightMode,
   "speed": Speed,
   "memory": Memory,
   "library_add": LibraryAdd,
