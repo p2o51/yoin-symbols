@@ -2,7 +2,7 @@ name: yoin_symbols
 description: >-
   Yoin Symbols: light, rounded line icons with continuous-curvature containers,
   shipped as an icon font for Flutter's Icon widget.
-version: 0.1.0
+version: 0.2.0
 homepage: https://github.com/p2o51/yoin-symbols
 repository: https://github.com/p2o51/yoin-symbols/tree/main/flutter
 issue_tracker: https://github.com/p2o51/yoin-symbols/issues

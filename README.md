@@ -8,7 +8,7 @@ Light, rounded line icons with continuous-curvature containers. 96 symbols drawn
 
 | Platform | Package | Install |
 | --- | --- | --- |
-| Jetpack Compose, Android views | `io.github.p2o51:yoin-symbols` | `implementation("io.github.p2o51:yoin-symbols:0.1.0")` |
+| Jetpack Compose, Android views | `io.github.p2o51:yoin-symbols` | `implementation("io.github.p2o51:yoin-symbols:0.2.0")` |
 | Web, React | `yoin-symbols` | `npm i yoin-symbols` |
 | Flutter | `yoin_symbols` | `flutter pub add yoin_symbols` |
 | Figma | Yoin Symbols library | Duplicate the file, or enable the published library |
@@ -24,7 +24,7 @@ Light, rounded line icons with continuous-curvature containers. 96 symbols drawn
 
 ```kotlin
 dependencies {
-    implementation("io.github.p2o51:yoin-symbols:0.1.0")
+    implementation("io.github.p2o51:yoin-symbols:0.2.0")
 }
 ```
 

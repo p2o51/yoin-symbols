@@ -1,6 +1,6 @@
 {
   "name": "yoin-symbols",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Yoin Symbols: light, rounded line icons with continuous-curvature containers. SVG, React, sprite and icon font.",
   "keywords": [
     "icons",

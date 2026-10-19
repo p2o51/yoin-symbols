@@ -8,7 +8,7 @@
 
 | 平台 | 包名 | 安装 |
 | --- | --- | --- |
-| Jetpack Compose、Android View | `io.github.p2o51:yoin-symbols` | `implementation("io.github.p2o51:yoin-symbols:0.1.0")` |
+| Jetpack Compose、Android View | `io.github.p2o51:yoin-symbols` | `implementation("io.github.p2o51:yoin-symbols:0.2.0")` |
 | Web、React | `yoin-symbols` | `npm i yoin-symbols` |
 | Flutter | `yoin_symbols` | `flutter pub add yoin_symbols` |
 | Figma | Yoin Symbols 组件库 | 复制文件，或启用已发布的团队库 |
@@ -24,7 +24,7 @@
 
 ```kotlin
 dependencies {
-    implementation("io.github.p2o51:yoin-symbols:0.1.0")
+    implementation("io.github.p2o51:yoin-symbols:0.2.0")
 }
 ```
 
