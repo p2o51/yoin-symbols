@@ -28,25 +28,17 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: gradle/actions/setup-gradle@v6
-      - name: Build and sign
+      - name: Upload to Maven Central
+        # Uploads and validates only. The deployment waits on central.sonatype.com
+        # until someone presses Publish there.
         env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGNING_KEY }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
-        run: ./gradlew :yoin-symbols:publishReleasePublicationToStagingRepository
-      - name: Upload to Maven Central
-        env:
-          CENTRAL_TOKEN_USERNAME: ${{ secrets.CENTRAL_TOKEN_USERNAME }}
-          CENTRAL_TOKEN_PASSWORD: ${{ secrets.CENTRAL_TOKEN_PASSWORD }}
         run: |
-          cd yoin-symbols/build/staging-deploy
-          find . -name '*.asc' | grep -q . || { echo "Artifacts are not signed"; exit 1; }
-          zip -qr ../central-bundle.zip . -x '*maven-metadata*'
-          cd ..
-          token=$(printf '%s:%s' "$CENTRAL_TOKEN_USERNAME" "$CENTRAL_TOKEN_PASSWORD" | base64 -w0)
-          curl --fail-with-body -sS -X POST \
-            -H "Authorization: Bearer $token" \
-            -F "bundle=@central-bundle.zip" \
-            "https://central.sonatype.com/api/v1/publisher/upload?publishingType=AUTOMATIC&name=yoin-symbols-${GITHUB_REF_NAME}"
+          test -n "$ORG_GRADLE_PROJECT_signingInMemoryKey" || { echo "SIGNING_KEY is not set"; exit 1; }
+          ./gradlew :yoin-symbols:publishToMavenCentral
 
   npm:
     needs: check

@@ -1,10 +1,14 @@
+import com.vanniktech.maven.publish.AndroidSingleVariantLibrary
+import com.vanniktech.maven.publish.JavadocJar
+import com.vanniktech.maven.publish.SourcesJar
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.compose)
-    `maven-publish`
-    signing
+    alias(libs.plugins.maven.publish)
 }
 
+// Also set on the project so an app's includeBuild() substitutes io.github.p2o51:yoin-symbols.
 group = providers.gradleProperty("GROUP").get()
 version = providers.gradleProperty("VERSION_NAME").get()
 
@@ -26,12 +30,6 @@ android {
     buildFeatures {
         compose = true
     }
-
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-        }
-    }
 }
 
 dependencies {
@@ -42,63 +40,60 @@ dependencies {
     api(libs.compose.animation.core)
 }
 
-// Maven Central wants a javadoc jar; the KDoc lives in the sources jar.
-val emptyJavadocJar by tasks.registering(Jar::class) {
-    archiveClassifier.set("javadoc")
-}
+// Credentials never live in the repo. Set them in ~/.gradle/gradle.properties or as
+// ORG_GRADLE_PROJECT_* environment variables: mavenCentralUsername, mavenCentralPassword
+// (a Central Portal user token), signingInMemoryKey, signingInMemoryKeyId,
+// signingInMemoryKeyPassword. See RELEASING.md.
+mavenPublishing {
+    // Uploads only; the deployment is published by hand on central.sonatype.com.
+    publishToMavenCentral()
+    // Without a key (CI checks, publishToMavenLocal) the artifacts stay unsigned;
+    // the Central Portal rejects an unsigned deployment, so nothing slips through.
+    if (providers.gradleProperty("signingInMemoryKey").isPresent) {
+        signAllPublications()
+    }
 
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = project.group.toString()
-            artifactId = "yoin-symbols"
-            version = project.version.toString()
-            artifact(emptyJavadocJar)
-            afterEvaluate {
-                from(components["release"])
-            }
-            pom {
-                name.set("Yoin Symbols")
-                description.set(
-                    "Light, rounded line icons with continuous-curvature containers for Jetpack Compose, " +
-                        "plus spring-animated symbols.",
-                )
-                url.set("https://github.com/p2o51/yoin-symbols")
-                licenses {
-                    license {
-                        name.set("MIT License")
-                        url.set("https://opensource.org/licenses/MIT")
-                        distribution.set("repo")
-                    }
-                }
-                developers {
-                    developer {
-                        id.set("p2o51")
-                        name.set("p2o51")
-                        url.set("https://github.com/p2o51")
-                    }
-                }
-                scm {
-                    url.set("https://github.com/p2o51/yoin-symbols")
-                    connection.set("scm:git:https://github.com/p2o51/yoin-symbols.git")
-                    developerConnection.set("scm:git:ssh://git@github.com/p2o51/yoin-symbols.git")
-                }
+    coordinates(
+        groupId = group.toString(),
+        artifactId = "yoin-symbols",
+        version = version.toString(),
+    )
+
+    configure(
+        AndroidSingleVariantLibrary(
+            // Maven Central wants a javadoc jar; the KDoc lives in the sources jar.
+            javadocJar = JavadocJar.Empty(),
+            sourcesJar = SourcesJar.Sources(),
+            variant = "release",
+        ),
+    )
+
+    pom {
+        name.set("Yoin Symbols")
+        description.set(
+            "Light, rounded line icons with continuous-curvature containers for Jetpack Compose, " +
+                "plus spring-animated symbols.",
+        )
+        inceptionYear.set("2026")
+        url.set("https://github.com/p2o51/yoin-symbols")
+        licenses {
+            license {
+                name.set("MIT License")
+                url.set("https://opensource.org/licenses/MIT")
+                distribution.set("repo")
             }
         }
-    }
-    repositories {
-        // Release workflow zips this folder and uploads it to the Maven Central Portal.
-        maven {
-            name = "staging"
-            url = uri(layout.buildDirectory.dir("staging-deploy"))
+        developers {
+            developer {
+                id.set("p2o51")
+                name.set("p2o51")
+                url.set("https://github.com/p2o51")
+            }
         }
-    }
-}
-
-signing {
-    val signingKey = providers.gradleProperty("signingInMemoryKey").orNull
-    if (signingKey != null) {
-        useInMemoryPgpKeys(signingKey, providers.gradleProperty("signingInMemoryKeyPassword").orNull)
-        sign(publishing.publications)
+        scm {
+            url.set("https://github.com/p2o51/yoin-symbols")
+            connection.set("scm:git:https://github.com/p2o51/yoin-symbols.git")
+            developerConnection.set("scm:git:ssh://git@github.com/p2o51/yoin-symbols.git")
+        }
     }
 }

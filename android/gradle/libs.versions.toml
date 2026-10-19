@@ -2,6 +2,7 @@
 agp = "9.1.0"
 kotlin = "2.3.20"
 composeBom = "2026.03.01"
+mavenPublish = "0.37.0"
 
 [libraries]
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -13,3 +14,4 @@ compose-animation-core = { group = "androidx.compose.animation", name = "animati
 [plugins]
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }

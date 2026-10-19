@@ -37,7 +37,7 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: gradle/actions/setup-gradle@v6
-      - run: ./gradlew :yoin-symbols:assembleRelease :yoin-symbols:publishReleasePublicationToStagingRepository
+      - run: ./gradlew :yoin-symbols:assembleRelease :yoin-symbols:publishToMavenLocal
 
   web:
     runs-on: ubuntu-latest
