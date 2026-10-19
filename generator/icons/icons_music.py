@@ -163,7 +163,7 @@ def _bez(p0, p1, p2, p3, t):
 
 def _seg_len(p0, p1, p2, p3, n=400):
     pts = [_bez(p0, p1, p2, p3, i / n) for i in range(n + 1)]
-    return sum(math.dist(pts[i], pts[i + 1]) for i in range(n))
+    return math.fsum(math.dist(pts[i], pts[i + 1]) for i in range(n))
 
 
 def _chain(cmds):
@@ -227,7 +227,7 @@ def _like(chain, cubic):
     for c1, c2, e in segs:
         lens.append(_seg_len(cur, c1, c2, e))
         cur = e
-    total = sum(lens)
+    total = math.fsum(lens)
     fr, acc = [], 0.0
     for l in lens[:-1]:
         acc += l
