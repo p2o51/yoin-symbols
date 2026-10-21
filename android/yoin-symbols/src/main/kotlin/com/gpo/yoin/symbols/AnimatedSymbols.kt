@@ -333,12 +333,13 @@ public fun rememberPlayModeSymbolPainter(
         Group(name = "under", pivotX = 12f, pivotY = 12f, scaleX = cos(PI.toFloat() * t)) {
             val under = chainPath(SymbolGeometry.PlayModeLoopB, SymbolGeometry.PlayModeCrossB, t)
             val gap = SymbolGeometry.PlayModeGap * ((t - 0.55f) / 0.45f).coerceIn(0f, 1f)
-            if (gap > 0.001f) {
-                StrandPath(under, a, trimEnd = 0.5f - gap)
-                StrandPath(under, a, trimStart = 0.5f + gap)
-            } else {
-                StrandPath(under, a)
-            }
+            // Always the same two paths, so the group's children never change: a vector group's
+            // insertAt overwrites the child at that index, and adding the second half mid-group
+            // dropped the arrowhead after it. Closed, the first half runs the whole strand and the
+            // second is invisible.
+            val open = gap > 0.001f
+            StrandPath(under, a, trimEnd = if (open) 0.5f - gap else 1f)
+            StrandPath(under, if (open) a else 0f, trimStart = 0.5f + gap)
             HeadPath(SymbolGeometry.PlayModeHeadLoopB, SymbolGeometry.PlayModeHeadCrossB, t, -n, a)
         }
         val s = one.value.coerceAtLeast(0f)
