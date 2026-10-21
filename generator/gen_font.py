@@ -24,6 +24,8 @@ UPM = 960
 FONT_EPOCH = 1790726400  # 2026-09-30T00:00:00Z; override with SOURCE_DATE_EPOCH
 SCALE = UPM / 24.0
 HALF = 0.75  # half stroke width
+# simplification tolerance, half a font unit, as the fraction (num, den) of its square
+SIMPLIFY_TOL2 = (1, 4)
 
 
 def _sample(sub, n_curve=48):
@@ -67,8 +69,7 @@ def layer_geometry(layer):
 
 
 def icon_geometry(name):
-    g = unary_union([layer_geometry(l) for l in REGISTRY[name].layers])
-    return g.simplify(0.004, preserve_topology=True)
+    return unary_union([layer_geometry(l) for l in REGISTRY[name].layers])
 
 
 def _polys(g):
@@ -81,26 +82,64 @@ def _polys(g):
     return [p for p in getattr(g, "geoms", []) if isinstance(p, Polygon)]
 
 
-def _draw_ring(pen, coords):
+def _dp(pts, tol2, keep):
+    """Douglas-Peucker on integer points. Exact integer maths, ties go to the lowest index."""
+    a, b = pts[0], pts[-1]
+    dx, dy = b[0] - a[0], b[1] - a[1]
+    l2 = dx * dx + dy * dy
+    best, at = -1, None
+    for i in range(1, len(pts) - 1):
+        p = pts[i]
+        cross = (p[0] - a[0]) * dy - (p[1] - a[1]) * dx
+        if cross * cross > best:
+            best, at = cross * cross, i
+    # distance^2 > tol^2  <=>  cross^2 > tol^2 * |ab|^2  (tol^2 kept as a fraction)
+    if at is not None and best * tol2[1] > tol2[0] * l2:
+        _dp(pts[: at + 1], tol2, keep)
+        keep.append(pts[at])
+        _dp(pts[at:], tol2, keep)
+
+
+def _ring(coords):
+    """Font-unit integer ring: rounded, simplified and started at its smallest point.
+
+    Simplifying after rounding, in integer arithmetic, keeps the result independent of the
+    last-bit float noise that differs between platforms (libm, GEOS builds): run on float
+    coordinates, near-ties on round caps resolved differently on macOS and Linux.
+    """
     pts = [(round(x * SCALE), round((24 - y) * SCALE)) for x, y in coords[:-1]]
-    dedup = [p for i, p in enumerate(pts) if i == 0 or p != pts[i - 1]]
-    if len(dedup) > 1 and dedup[0] == dedup[-1]:
-        dedup.pop()
-    if len(dedup) < 3:
-        return
-    pen.moveTo(dedup[0])
-    for p in dedup[1:]:
-        pen.lineTo(p)
-    pen.closePath()
+    pts = [p for i, p in enumerate(pts) if i == 0 or p != pts[i - 1]]
+    if len(pts) > 1 and pts[0] == pts[-1]:
+        pts.pop()
+    if len(pts) < 3:
+        return None
+    s = pts.index(min(pts))
+    pts = pts[s:] + pts[:s]
+    # split at the start (a hull vertex) and the point farthest from it; both always stay
+    far = max(range(len(pts)), key=lambda i: ((pts[i][0] - pts[0][0]) ** 2 + (pts[i][1] - pts[0][1]) ** 2, -i))
+    keep = [pts[0]]
+    _dp(pts[: far + 1], SIMPLIFY_TOL2, keep)
+    keep.append(pts[far])
+    _dp(pts[far:] + [pts[0]], SIMPLIFY_TOL2, keep)
+    return keep if len(keep) >= 3 else None
 
 
 def glyph_for(name):
-    pen = TTGlyphPen(None)
+    rings = []
     for poly in _polys(icon_geometry(name)):
         poly = orient(poly, sign=1.0)  # CCW in y-down space -> clockwise once y is flipped
-        _draw_ring(pen, list(poly.exterior.coords))
-        for hole in poly.interiors:
-            _draw_ring(pen, list(hole.coords))
+        outer = _ring(list(poly.exterior.coords))
+        if outer is None:
+            continue
+        holes = sorted(r for r in (_ring(list(h.coords)) for h in poly.interiors) if r)
+        rings.append((outer, holes))
+    pen = TTGlyphPen(None)
+    for outer, holes in sorted(rings):
+        for ring in [outer] + holes:
+            pen.moveTo(ring[0])
+            for p in ring[1:]:
+                pen.lineTo(p)
+            pen.closePath()
     return pen.glyph()
 
 

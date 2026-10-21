@@ -24,6 +24,16 @@ jobs:
           git status --porcelain
           git diff --exit-code
           test -z "$(git status --porcelain)"
+      - name: Upload the regenerated files
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regenerated
+          path: |
+            docs/index.html
+            flutter/fonts/YoinSymbols.ttf
+            web/font/YoinSymbols.ttf
+            web/font/YoinSymbols.woff2
 
   android:
     runs-on: ubuntu-latest
