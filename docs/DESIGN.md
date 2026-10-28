@@ -78,7 +78,7 @@ Symbols with moving parts keep those parts separate: an `id` in the SVG, a group
 | download, download_done | `tray`, `shaft`, `head`, `check` |
 | library_add, library_added | `front`, `back`, `plus-v`, `plus-h`, `check` |
 | equalizer | `bar-0` … `bar-4` |
-| sparkle | `sparkle-main`, `sparkle-mini` |
+| sparkle | `sparkle-main`, `sparkle-stick`, `sparkle-dot-0`, `sparkle-dot-1` |
 | repeat_one | `one` |
 
 ## Logo

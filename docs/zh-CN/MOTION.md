@@ -46,7 +46,7 @@
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | 翻译等待 | 翻译按钮 | 见上 | E default + 0.32 s 停顿 | 透明度呼吸 | `rememberTranslateSymbolPainter` |
 | 2 | 加入资料库 · 等待确认 | 资料库「+」，服务端稍后确认 | 竖线收起、横线缩成圆点，卡片里一段弧转动；确认后圆点展开成对勾并回弹；失败回到「+」并摇两下 | 变形 E fast；弧 fast / slow effects | 弧不转只呼吸；确认直接出对勾 | |
-| 3 | AI 生成 | 生成、摘要、推荐 | 大星每次转 90° 后停，小星错拍闪；完成时填实并轻微放大 | 旋转 E default；填充 default effects | 透明度呼吸，完成直接填实 | `rememberSparkleSymbolPainter` |
+| 3 | AI 生成 | 生成、摘要、推荐 | 魔法棒顶上的星每次转 90° 后停，两点光错拍闪；完成时星填实并轻微放大 | 旋转 E default；填充 default effects | 透明度呼吸，完成直接填实 | `rememberSparkleSymbolPainter` |
 | 4 | 投屏连接 | 投屏按钮 | 圆点、内弧、外弧依次点亮并外弹；连上后面板从左下长出（cast_connected） | 点亮 default effects；外弹 E fast；面板 E default | 只有透明度 | |
 | 5 | 搜索中 | 搜索面板 | 放大镜在三个位置间“张望”，有结果时回原位并放大一下 | E default + 0.16 s | 透明度呼吸 | |
 | 6 | 重新扫描 | 刷新 | 每拍转一整圈后停，结束总在整圈 | E default + 0.22 s | 透明度呼吸 | |

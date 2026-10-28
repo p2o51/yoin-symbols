@@ -39,8 +39,9 @@ def geom():
     front, back, (cx, cy) = CT._library_front_back()
     g["libraryAdd"] = dict(front=d(front), back=d(back), c=[cx, cy], half=3.1,
                            check=[[cx - 3.05, cy + 0.1], [cx - 0.85, cy + 2.3], [cx + 3.2, cy - 1.75]])
-    g["sparkle"] = dict(main=d(MU.sparkle_path(10.6, 13.4, 7.25)), mini=d(MU.sparkle_path(18.1, 5.9, 2.35)),
-                        mainC=[10.6, 13.4], miniC=[18.1, 5.9])
+    star, stick, dots = MU.sparkle_parts()
+    g["sparkle"] = dict(main=d(star), stick=d(stick), dots=[d(p) for p in dots],
+                        mainC=list(MU.SPARKLE_STAR[:2]), dotC=[list(c) for c in MU.SPARKLE_DOTS])
     ox, oy = DV.CAST_O
     ox_dot = ox + 0.55
     g["cast"] = dict(screen=d(DV.cast_screen()), dot=d(circle(ox + 0.55, oy - 0.55, 1.1)),

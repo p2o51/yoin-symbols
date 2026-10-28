@@ -379,7 +379,7 @@ def _():
     return [FS(heart())]
 
 
-def star(cx=12.0, cy=12.6, R=8.85, r=4.15, tip=1.35, inner=0.55):
+def star(cx=12.0, cy=12.4, R=10.4, r=4.9, tip=1.5, inner=0.55):
     pts = []
     for i in range(10):
         rad = R if i % 2 == 0 else r
@@ -487,14 +487,29 @@ def sparkle_path(cx, cy, R, pinch=0.08):
     return out
 
 
+# A short wand with the star at its tip and two specks of light: more specific than
+# the bare twin stars every AI feature uses. The star turns and the specks blink.
+SPARKLE_STAR = (16.3, 7.7, 4.6)
+SPARKLE_STICK = (4.6, 19.4, 13.2, 10.8)
+SPARKLE_DOTS = ((9.0, 5.2), (19.4, 14.8))
+
+
+def sparkle_parts():
+    """(star, stick, [dot, dot]) of the AI wand."""
+    cx, cy, r = SPARKLE_STAR
+    return sparkle_path(cx, cy, r), line(*SPARKLE_STICK), [dot_path(x, y, 0.95) for x, y in SPARKLE_DOTS]
+
+
 @icon("sparkle", "music", "AI / 生成", replaces=["Icons.Rounded.AutoAwesome"])
 def _():
-    return [S(sparkle_path(10.6, 13.4, 7.25), id="sparkle-main"), S(sparkle_path(18.1, 5.9, 2.35), id="sparkle-mini")]
+    star, stick, dots = sparkle_parts()
+    return [S(stick, id="sparkle-stick"), S(star, id="sparkle-main")] + [F(d, id=f"sparkle-dot-{i}") for i, d in enumerate(dots)]
 
 
 @icon("sparkle_filled", "music", "AI（进行中 / 已生成）")
 def _():
-    return [FS(sparkle_path(10.6, 13.4, 7.25), id="sparkle-main"), FS(sparkle_path(18.1, 5.9, 2.35), id="sparkle-mini")]
+    star, stick, dots = sparkle_parts()
+    return [S(stick, id="sparkle-stick"), FS(star, id="sparkle-main")] + [F(d, id=f"sparkle-dot-{i}") for i, d in enumerate(dots)]
 
 
 @icon("play_circle", "music", "播放（圆形）", replaces=["Icons.Rounded.PlayCircle"])

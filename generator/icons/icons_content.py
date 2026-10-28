@@ -2,7 +2,7 @@
 import math
 
 from geom import *
-from icons_music import bubble, star
+from icons_music import bubble
 from icons_nav import _pencil
 from knock import around, band, cut, fill_region
 from registry import F, FS, S, icon
@@ -35,7 +35,8 @@ def _():
 
 @icon("reviews", "content", "乐评 / 评论", replaces=["Icons.Rounded.Reviews"])
 def _():
-    return [S(bubble()), S(star(cx=12.0, cy=10.65, R=4.05, r=1.95, tip=0.6, inner=0.3))]
+    # two lines of text, the second trailing off into a dot; a star this small closes up
+    return [S(bubble()), S(line(7.9, 8.6, 16.1, 8.6)), S(line(7.9, 12.15, 12.0, 12.15)), F(dot_path(15.6, 12.15, 0.95))]
 
 
 @icon("insights", "content", "统计 / 洞察", replaces=["Icons.Outlined.Insights"])

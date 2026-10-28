@@ -215,8 +215,8 @@ def _():
 @icon("share", "nav", "分享", replaces=["Icons.Rounded.IosShare"])
 def _():
     tray = squircle(4.75, 9.4, 14.5, 10.85, r=3.3, s=0.6)
-    # Open at the top, and the right wall stops at half height instead of wrapping over.
-    tray = cut(tray, unary_union([box(8.6, 5, 15.4, 11), box(15.4, 5, 21, 14.8)]))
+    # Open at the top: the left corner stops halfway round, the right one a little lower.
+    tray = cut(tray, unary_union([box(7.4, 5, 15.4, 11), box(15.4, 5, 21, 11.6)]))
     return [S(tray), S(line(12, 14.6, 12, 3.75)), S(polyline([(8.4, 7.35), (12, 3.75), (15.6, 7.35)]))]
 
 
