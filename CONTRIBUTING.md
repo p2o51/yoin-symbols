@@ -44,12 +44,12 @@ Yoin and the Paw apps (PiliPaw, WeiPaw, CronPaw, PipePaw) take every icon from t
    ```
 
    and its dependency stays `implementation("io.github.p2o51:yoin-symbols:<version>")`; Gradle swaps in the source when the checkout is there.
-3. **Move the app's CI.** An app's CI checks out this repository at a fixed commit into `yoin-symbols/` and passes `-PyoinSymbolsDir=yoin-symbols` (see Yoin's `.github/workflows/ci.yml`). After the pull request here is merged, update that commit to the merged SHA in the same app pull request that starts using the symbol.
+3. **Nothing to bump after the merge.** An app's CI checks out this repository's `main` into `yoin-symbols/` and passes `-PyoinSymbolsDir=yoin-symbols` (see Yoin's `.github/workflows/ci.yml`), so once the pull request here is merged, every app's next CI and release build draws the new or changed symbol. Locally, `git pull` the `../yoin-symbols` checkout. Merge the pull request here before the app pull request that starts using the symbol.
 4. **Release later.** New symbols reach Maven Central, npm and pub.dev with the next release, when enough has collected. Only the owner decides on and runs a release ([RELEASING.md](RELEASING.md)); a contribution never changes `VERSION` or publishes anything.
 
 ## Changing a symbol
 
-Refining a drawing is a patch release. Renaming or removing a symbol breaks every platform's API, so it waits for a minor release (while the version is 0.x) with a note in the changelog.
+Refining a drawing is a patch release. Renaming or removing a symbol breaks every platform's API, so it waits for a minor release (while the version is 0.x) with a note in the changelog. The apps build against `main`, so a refined drawing reaches all of them at once; a rename or removal also needs pull requests in the apps that use it (search them for `YoinSymbols.TheName`), merged together with this one.
 
 ## Figma
 

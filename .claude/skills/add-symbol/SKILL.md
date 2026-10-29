@@ -55,7 +55,7 @@ python3 generator/build.py
 
 ## Using it in an app
 
-Apps include `../yoin-symbols/android` as a composite build, so the symbol is usable as soon as the sibling checkout has it. After this repository's pull request merges, the app's CI pin (`ref:` of the `p2o51/yoin-symbols` checkout in its workflow) moves to the merged SHA. See `CONTRIBUTING.md` → "Requesting or adding a symbol from an app".
+Apps include `../yoin-symbols/android` as a composite build, so the symbol is usable as soon as the sibling checkout has it. App CI checks out this repository's `main`, so after this repository's pull request merges there is nothing to bump: every app's next build draws the change. Merge this repository's pull request first, then the app's. Renaming or removing a symbol breaks every app at once; update the apps that use it in the same round. See `CONTRIBUTING.md` → "Requesting or adding a symbol from an app".
 
 ## Never
 
