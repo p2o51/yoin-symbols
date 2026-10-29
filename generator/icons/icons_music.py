@@ -12,8 +12,13 @@ from shapely.ops import unary_union
 PLAY = [(8.35, 5.15), (19.25, 12.0), (8.35, 18.85)]
 
 
+# The outline's fillets pull its corners in, so it is drawn on a larger triangle that
+# reaches the same edges as play_filled (whose corners come only from the round join).
+PLAY_OUTLINE = [(8.35, 4.5), (20.15, 12.0), (8.35, 19.5)]
+
+
 def play_path():
-    return rounded_poly(PLAY, [0.85, 0.95, 0.85])
+    return rounded_poly(PLAY_OUTLINE, [0.85, 0.95, 0.85])
 
 
 @icon("play_arrow", "music", "播放", replaces=["Icons.Rounded.PlayArrow"])
