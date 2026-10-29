@@ -45,19 +45,20 @@ Yoin Symbols 沿用 Google Luminous 符号的视觉语言：更细的线、更�
 
 | 形状 | `generator/icons/geom.py` 里的函数 | 常用参数 |
 | --- | --- | --- |
-| 连续曲率容器 | `squircle(x, y, w, h, r, s)`，即 Figma 的圆角平滑算法 | r 3.1–4.0，s 0.6，弯曲延伸到 1.6 r |
+| 连续曲率容器 | `squircle(x, y, w, h, r, s)`，即 Figma 的圆角平滑算法；`squircle_box(left, top, right, bottom, reach)` 按四条边和弯曲延伸长度（1.6 r）来给 | r 3.1–4.0，s 0.6，弯曲延伸到 1.6 r |
 | 圆角多边形 | `rounded_poly(points, radii)`，每个角单独给半径 | 三角形顶点 0.85–1.0，房顶 2.3 |
 | 圆角折线 | `rounded_polyline` | 开口形状：托盘、把手 |
 | 圆、椭圆、弧 | `circle`、`ellipse`、`arc`（角度制，0° 向右，90° 向下） | |
+| 自由曲线 | `parse_d(d)`：任意 SVG 路径（含圆弧和相对命令）转成 `M L C Z` | 火苗、爪垫、调色板 |
 
 ### 细节
 
 - **小圆点**：信息点 r 0.95（比描边一半略大，光学上才和线一样重）；“更多”的三个点 r 1.4。
 - **V 形箭头**：9 × 4.5，所有方向是同一条路径旋转。
-- **交叉**：两条线交叉时，下层线条在上层两侧各断开 1.05（中线到中线 3.6）。`knock.cut(path, knock.around(over, 1.8))` 切出来的是真正的贝塞尔线段，任何导出都保留缝隙（shuffle、visibility_off、cloud_offline、devices）。
+- **交叉**：两条线交叉时，下层线条在上层两侧各断开 1.05（中线到中线 3.6）。`knock.cut(path, knock.around(over, 1.8))` 切出来的是真正的贝塞尔线段，任何导出都保留缝隙（shuffle、visibility_off、cloud_offline、devices、danmaku_off）。缝隙只用在一个东西从另一个东西后面穿过的地方；同一个物体自己的线条交叉时保持相连（add、topic、gift 盖子上的丝带）。
 - **实心版**：同一条中线，填充再加同宽描边，外沿与线框版完全重合。镂空用 even-odd（error_filled、library_filled）。
 - **实心播放控件**：play_filled、pause_filled、skip_*_filled 是直边多边形，角由 0.75 的圆角连接自然形成。播放和暂停点数相同，可以互相变形。
-- **从右到左**：back、chevron_left、chevron_right、send、undo 在从右到左的布局里会镜像（Android 用 `autoMirror`，Flutter 用 `matchTextDirection`）。播放控件不镜像，和 Material 的建议一致。
+- **从右到左**：back、chevron_left、chevron_right、send、undo、reply、forward、logout、replay、danmaku_scroll 在从右到左的布局里会镜像（Android 用 `autoMirror`，Flutter 用 `matchTextDirection`）。播放控件不镜像，和 Material 的建议一致。
 
 ### 颜色
 
@@ -80,6 +81,7 @@ Yoin Symbols 沿用 Google Luminous 符号的视觉语言：更细的线、更�
 | equalizer | `bar-0` … `bar-4` |
 | sparkle | `sparkle-main`、`sparkle-stick`、`sparkle-dot-0`、`sparkle-dot-1` |
 | repeat_one | `one` |
+| paw、paw_filled | `toe-0` … `toe-3`、`pad` |
 
 ## 标志
 

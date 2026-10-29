@@ -35,6 +35,21 @@ export type YoinSymbolName =
   | "visibility_off"
   | "code"
   | "send"
+  | "menu"
+  | "up"
+  | "north_west"
+  | "delete_sweep"
+  | "block"
+  | "check_box"
+  | "check_circle"
+  | "link"
+  | "logout"
+  | "lock"
+  | "bell"
+  | "history"
+  | "qr"
+  | "pin"
+  | "pin_filled"
   | "play_arrow"
   | "play_filled"
   | "pause"
@@ -51,6 +66,7 @@ export type YoinSymbolName =
   | "music_note"
   | "album"
   | "person"
+  | "person_filled"
   | "artist"
   | "favorite"
   | "favorite_filled"
@@ -63,6 +79,8 @@ export type YoinSymbolName =
   | "sparkle"
   | "sparkle_filled"
   | "play_circle"
+  | "stop"
+  | "stop_filled"
   | "cast"
   | "cast_connected"
   | "smartphone"
@@ -83,6 +101,9 @@ export type YoinSymbolName =
   | "download_done"
   | "volume_up"
   | "volume_mute"
+  | "mic"
+  | "keyboard"
+  | "database"
   | "note"
   | "edit_note"
   | "reviews"
@@ -96,7 +117,60 @@ export type YoinSymbolName =
   | "memory"
   | "library_add"
   | "library_added"
-  | "copy";
+  | "copy"
+  | "brightness"
+  | "dark_mode"
+  | "palette"
+  | "image"
+  | "camera"
+  | "article"
+  | "calendar"
+  | "place"
+  | "waves"
+  | "thumb_up"
+  | "thumb_up_filled"
+  | "thumb_down"
+  | "thumb_down_filled"
+  | "flag"
+  | "coin"
+  | "coin_filled"
+  | "paw"
+  | "paw_filled"
+  | "comment"
+  | "dialogue"
+  | "reply"
+  | "forward"
+  | "at"
+  | "topic"
+  | "emoji"
+  | "mail"
+  | "person_add"
+  | "person_check"
+  | "quiet_eye"
+  | "quiet_eye_filled"
+  | "channel"
+  | "dynamic"
+  | "dynamic_filled"
+  | "fire"
+  | "trophy"
+  | "trophy_filled"
+  | "gift"
+  | "poll"
+  | "live"
+  | "views"
+  | "video"
+  | "danmaku"
+  | "danmaku_off"
+  | "danmaku_top"
+  | "danmaku_bottom"
+  | "danmaku_scroll"
+  | "subtitles"
+  | "hd"
+  | "pip"
+  | "fullscreen"
+  | "fullscreen_exit"
+  | "replay"
+  | "watch_later";
 
 /** 主页 · home */
 export declare const Home: string;
@@ -166,6 +240,36 @@ export declare const VisibilityOff: string;
 export declare const Code: string;
 /** 发送 · send */
 export declare const Send: string;
+/** 菜单 · menu */
+export declare const Menu: string;
+/** 置顶 / 回到顶部 · up */
+export declare const Up: string;
+/** 填入（左上箭头） · north_west */
+export declare const NorthWest: string;
+/** 清空 · delete_sweep */
+export declare const DeleteSweep: string;
+/** 拉黑 / 屏蔽 · block */
+export declare const Block: string;
+/** 多选 · check_box */
+export declare const CheckBox: string;
+/** 认证 / 已完成 · check_circle */
+export declare const CheckCircle: string;
+/** 链接 · link */
+export declare const Link: string;
+/** 退出登录 · logout */
+export declare const Logout: string;
+/** 隐私 / 锁 · lock */
+export declare const Lock: string;
+/** 通知 · bell */
+export declare const Bell: string;
+/** 历史记录 · history */
+export declare const History: string;
+/** 二维码 · qr */
+export declare const Qr: string;
+/** 置顶 / 固定 · pin */
+export declare const Pin: string;
+/** 已置顶 · pin_filled */
+export declare const PinFilled: string;
 /** 播放 · play_arrow */
 export declare const PlayArrow: string;
 /** 播放（实心） · play_filled */
@@ -198,6 +302,8 @@ export declare const MusicNote: string;
 export declare const Album: string;
 /** 个人 / 账号 · person */
 export declare const Person: string;
+/** 个人（选中） · person_filled */
+export declare const PersonFilled: string;
 /** 艺人 · artist */
 export declare const Artist: string;
 /** 收藏 · favorite */
@@ -222,6 +328,10 @@ export declare const Sparkle: string;
 export declare const SparkleFilled: string;
 /** 播放（圆形） · play_circle */
 export declare const PlayCircle: string;
+/** 停止 · stop */
+export declare const Stop: string;
+/** 停止（实心） · stop_filled */
+export declare const StopFilled: string;
 /** 投屏 · cast */
 export declare const Cast: string;
 /** 已投屏 · cast_connected */
@@ -262,6 +372,12 @@ export declare const DownloadDone: string;
 export declare const VolumeUp: string;
 /** 静音 · volume_mute */
 export declare const VolumeMute: string;
+/** 语音输入 · mic */
+export declare const Mic: string;
+/** 键盘 · keyboard */
+export declare const Keyboard: string;
+/** 数据 / 数据库 · database */
+export declare const Database: string;
 /** 笔记 · note */
 export declare const Note: string;
 /** 编辑笔记 · edit_note */
@@ -290,6 +406,112 @@ export declare const LibraryAdd: string;
 export declare const LibraryAdded: string;
 /** 复制 · copy */
 export declare const Copy: string;
+/** 亮度 · brightness */
+export declare const Brightness: string;
+/** 深色模式 · dark_mode */
+export declare const DarkMode: string;
+/** 主题色 · palette */
+export declare const Palette: string;
+/** 图片 · image */
+export declare const Image: string;
+/** 截图 / 相机 · camera */
+export declare const Camera: string;
+/** 专栏 / 文章 · article */
+export declare const Article: string;
+/** 日历 · calendar */
+export declare const Calendar: string;
+/** 地点 · place */
+export declare const Place: string;
+/** 滚动边缘（潮线） · waves */
+export declare const Waves: string;
+/** 点赞 · thumb_up */
+export declare const ThumbUp: string;
+/** 已点赞 · thumb_up_filled */
+export declare const ThumbUpFilled: string;
+/** 点踩 · thumb_down */
+export declare const ThumbDown: string;
+/** 已点踩 · thumb_down_filled */
+export declare const ThumbDownFilled: string;
+/** 举报 · flag */
+export declare const Flag: string;
+/** 投币 · coin */
+export declare const Coin: string;
+/** 已投币 · coin_filled */
+export declare const CoinFilled: string;
+/** 赞（爪印） · paw */
+export declare const Paw: string;
+/** 已赞（爪印） · paw_filled */
+export declare const PawFilled: string;
+/** 评论 · comment */
+export declare const Comment: string;
+/** 对话 · dialogue */
+export declare const Dialogue: string;
+/** 回复 · reply */
+export declare const Reply: string;
+/** 转发 · forward */
+export declare const Forward: string;
+/** @ 提及 · at */
+export declare const At: string;
+/** 话题 / # · topic */
+export declare const Topic: string;
+/** 表情 · emoji */
+export declare const Emoji: string;
+/** 私信 · mail */
+export declare const Mail: string;
+/** 关注 · person_add */
+export declare const PersonAdd: string;
+/** 已关注 · person_check */
+export declare const PersonCheck: string;
+/** 悄悄关注 · quiet_eye */
+export declare const QuietEye: string;
+/** 悄悄关注中 · quiet_eye_filled */
+export declare const QuietEyeFilled: string;
+/** 频道 · channel */
+export declare const Channel: string;
+/** 动态 · dynamic */
+export declare const Dynamic: string;
+/** 动态（选中） · dynamic_filled */
+export declare const DynamicFilled: string;
+/** 热门 · fire */
+export declare const Fire: string;
+/** 排行榜 · trophy */
+export declare const Trophy: string;
+/** 排行榜（选中） · trophy_filled */
+export declare const TrophyFilled: string;
+/** 礼物 / 充电 · gift */
+export declare const Gift: string;
+/** 投票 · poll */
+export declare const Poll: string;
+/** 直播 · live */
+export declare const Live: string;
+/** 播放量 · views */
+export declare const Views: string;
+/** 视频 · video */
+export declare const Video: string;
+/** 弹幕 · danmaku */
+export declare const Danmaku: string;
+/** 弹幕关 · danmaku_off */
+export declare const DanmakuOff: string;
+/** 顶部弹幕 · danmaku_top */
+export declare const DanmakuTop: string;
+/** 底部弹幕 · danmaku_bottom */
+export declare const DanmakuBottom: string;
+/** 滚动弹幕 · danmaku_scroll */
+export declare const DanmakuScroll: string;
+/** 字幕 · subtitles */
+export declare const Subtitles: string;
+/** 画质 · hd */
+export declare const Hd: string;
+/** 画中画 · pip */
+export declare const Pip: string;
+/** 全屏 · fullscreen */
+export declare const Fullscreen: string;
+/** 退出全屏 · fullscreen_exit */
+export declare const FullscreenExit: string;
+/** 重播 · replay */
+export declare const Replay: string;
+/** 稍后再看 · watch_later */
+export declare const WatchLater: string;
 
 export declare const symbols: Record<YoinSymbolName, string>;
 export declare const names: YoinSymbolName[];

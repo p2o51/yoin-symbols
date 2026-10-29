@@ -23,12 +23,29 @@ Commit the source change and the regenerated files together. CI rebuilds everyth
 
 ## Adding a symbol
 
-1. Add a function to the right module in `generator/icons/` (`icons_nav.py`, `icons_music.py`, `icons_devices.py`, `icons_content.py`), using the helpers in `geom.py` and `knock.py`.
+1. Add a function to the right module in `generator/icons/` (`icons_nav.py`, `icons_music.py`, `icons_devices.py`, `icons_content.py`, `icons_social.py`; one module per group), using the helpers in `geom.py` and `knock.py`. Build containers, circles and arcs with the helpers; a free-form outline (a flame, a paw pad) can stay as path data through `parse_d`, which turns any SVG path into `M L C Z`.
 2. Follow the checklist at the end of [docs/DESIGN.md](docs/DESIGN.md).
 3. Run the build and look at the symbol in `docs/index.html` at 1.25, 1.5 and 1.75, in light and dark.
 4. Add a line to `CHANGELOG.md`.
 
 The build appends the new symbol to `generator/codepoints.json`. Code points are permanent: never renumber or remove an entry, even for a deleted symbol, or icon fonts in existing apps will show the wrong glyphs.
+
+## Requesting or adding a symbol from an app
+
+Yoin and the Paw apps (PiliPaw, WeiPaw, CronPaw) take every icon from this repository. An app never draws its own icon, never copies `YoinSymbols.kt` or an SVG from here, and never keeps a private symbols module. When an app needs a symbol that is not here:
+
+1. **Add it here.** Search the [gallery](https://p2o51.github.io/yoin-symbols/) first (names, Chinese names and Material names are all searchable); reuse a symbol that means the same thing. Otherwise branch this repository, add the symbol as described above, run the build and open a pull request. Name it after what it shows or means (`thumb_up`, `danmaku_off`), not after the screen that uses it. If the app already has a drawing, port it and overlay the two; keep them within half a unit unless you are fixing a rule, and say what you changed.
+2. **Use it in the app.** Apps build this repository from source with a composite build of a checkout next to them (`../yoin-symbols`), so as soon as that checkout has the new symbol (your branch, or `main` after a `git pull`), the app can write `YoinSymbols.NewSymbol`. No release is needed. The app's `settings.gradle.kts`:
+
+   ```kotlin
+   val yoinSymbolsDir = providers.gradleProperty("yoinSymbolsDir").getOrElse("../yoin-symbols")
+   val yoinSymbolsBuild = file("$yoinSymbolsDir/android")
+   if (yoinSymbolsBuild.isDirectory) includeBuild(yoinSymbolsBuild)
+   ```
+
+   and its dependency stays `implementation("io.github.p2o51:yoin-symbols:<version>")`; Gradle swaps in the source when the checkout is there.
+3. **Move the app's CI.** An app's CI checks out this repository at a fixed commit into `yoin-symbols/` and passes `-PyoinSymbolsDir=yoin-symbols` (see Yoin's `.github/workflows/ci.yml`). After the pull request here is merged, update that commit to the merged SHA in the same app pull request that starts using the symbol.
+4. **Release later.** New symbols reach Maven Central, npm and pub.dev with the next release, when enough has collected. Only the owner decides on and runs a release ([RELEASING.md](RELEASING.md)); a contribution never changes `VERSION` or publishes anything.
 
 ## Changing a symbol
 

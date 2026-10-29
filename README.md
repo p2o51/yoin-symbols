@@ -2,7 +2,7 @@
 
 ![Yoin Symbols](docs/cover.png)
 
-Light, rounded line icons with continuous-curvature containers. 96 symbols drawn for the music player Yoin, packaged for Jetpack Compose, the web, Flutter and Figma from a single source.
+Light, rounded line icons with continuous-curvature containers. 170 symbols drawn for the music player Yoin and the Paw apps (PiliPaw, WeiPaw, CronPaw), packaged for Jetpack Compose, the web, Flutter and Figma from a single source.
 
 [Gallery](https://p2o51.github.io/yoin-symbols/) · [Figma](https://www.figma.com/design/g0H4CfkagF8p1N4vuPYxQA) · [npm](https://www.npmjs.com/package/yoin-symbols) · [pub.dev](https://pub.dev/packages/yoin_symbols) · [Maven Central](https://central.sonatype.com/artifact/io.github.p2o51/yoin-symbols) · [中文](README.zh-CN.md)
 
@@ -17,7 +17,8 @@ Light, rounded line icons with continuous-curvature containers. 96 symbols drawn
 - 24 × 24 grid, 1.5 stroke, round caps and round joins
 - Continuous-curvature containers (corner smoothing 60 %)
 - Crossing lines leave a real gap in the path, not a mask
-- Ten symbols have a filled twin with the same outer edge
+- Twenty symbols have a filled twin with the same outer edge
+- Five groups: navigation & actions, playback & music, content & notes, devices & services, video & social
 - Seven symbols animate in Compose, on Material 3 Expressive springs
 
 ## Jetpack Compose
@@ -137,12 +138,18 @@ dependencyResolutionManagement {
 }
 ```
 
-**Android, live edits.** A composite build swaps the dependency for the source. It works best when the app and this project use the same Android Gradle Plugin version (9.1 here):
+**Android, live edits.** A composite build swaps the dependency for the source. This is how Yoin and the Paw apps use it: a checkout next to the app by default, a path from `-PyoinSymbolsDir` on CI, Maven Central when neither is there. It works best when the app and this project use the same Android Gradle Plugin version (9.2 here):
 
 ```kotlin
 // settings.gradle.kts of the app
-val yoinSymbols = file("../yoin-symbols/android")
-if (yoinSymbols.exists()) includeBuild(yoinSymbols)
+val yoinSymbolsDir = providers.gradleProperty("yoinSymbolsDir").getOrElse("../yoin-symbols")
+val yoinSymbolsBuild = file("$yoinSymbolsDir/android")
+if (yoinSymbolsBuild.isDirectory) includeBuild(yoinSymbolsBuild)
+```
+
+```kotlin
+// app/build.gradle.kts
+implementation("io.github.p2o51:yoin-symbols:0.2.0")
 ```
 
 **Web.** `npm i ../yoin-symbols/web`
@@ -159,7 +166,7 @@ dependencies:
 
 ```
 generator/          source of truth: one Python function per symbol, plus the generators
-  icons/            geometry kit and the symbols (icons_nav.py, icons_music.py, …)
+  icons/            geometry kit and the symbols (icons_nav.py, icons_music.py, icons_social.py, …)
   build.py          regenerates everything below
 svg/                canonical SVG files
 android/            Compose library: generated ImageVectors and drawables, hand-written motion
@@ -174,6 +181,8 @@ python3 generator/build.py
 ```
 
 Generated files are committed; CI fails if they drift from the source. See [CONTRIBUTING.md](CONTRIBUTING.md) to add a symbol and [RELEASING.md](RELEASING.md) to publish.
+
+An app that needs a symbol this set does not have adds it here first, then uses it: see [Requesting or adding a symbol from an app](CONTRIBUTING.md#requesting-or-adding-a-symbol-from-an-app). Apps do not draw their own icons or keep a copy of these files.
 
 Design notes: [docs/DESIGN.md](docs/DESIGN.md) · [docs/MOTION.md](docs/MOTION.md)
 

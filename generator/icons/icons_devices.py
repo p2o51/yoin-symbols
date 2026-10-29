@@ -248,3 +248,27 @@ def _():
 def _():
     spk = rounded_poly([(3.9, 9.1), (7.4, 9.1), (12.3, 4.9), (12.3, 19.1), (7.4, 14.9), (3.9, 14.9)], [1.1, 0.7, 1.1, 1.1, 0.7, 1.1])
     return [S(spk), S(line(15.9, 9.6, 20.7, 14.4)), S(line(20.7, 9.6, 15.9, 14.4))]
+
+
+# ---------------------------------------------------------------- from the Paw apps
+
+
+@icon("mic", "device", "语音输入", replaces=["Icons.Rounded.Mic"])
+def _():
+    return [S(rrect(9.5, 4, 5, 10, 2.5)), S(arc(12, 11, 5.5, 180, 0)), S(line(12, 16.5, 12, 20))]
+
+
+@icon("keyboard", "device", "键盘", replaces=["Icons.Rounded.Keyboard"])
+def _():
+    keys = [(7.6, 9.6), (10.53, 9.6), (13.47, 9.6), (16.4, 9.6), (7.6, 12.2), (16.4, 12.2)]
+    return [
+        S(squircle_box(3.75, 6, 20.25, 18, 5.2)),
+        F(join(*(circle(x, y, 0.95) for x, y in keys))),
+        S(line(9.25, 14.75, 14.75, 14.75)),
+    ]
+
+
+@icon("database", "device", "数据 / 数据库")
+def _():
+    side = [M(5, 6.5), L(5, 17.5)] + arc_cmds(12, 17.5, 7, 180, 0, ry=2.5, move=False) + [L(19, 6.5)]
+    return [S(ellipse(12, 6.5, 7, 2.5)), S(side), S(arc(12, 12, 7, 180, 0, ry=2.5))]

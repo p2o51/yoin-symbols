@@ -206,12 +206,16 @@ def _():
     return [S(body), S(er)]
 
 
-@icon("delete", "nav", "删除", replaces=["Icons.Rounded.Delete", "Icons.Filled.Delete"])
-def _():
+def _bin():
     lid = line(4.5, 6.6, 19.5, 6.6)
     handle = rounded_polyline([(9.35, 6.6), (9.35, 4.0), (14.65, 4.0), (14.65, 6.6)], [0, 1.1, 1.1, 0])
     body = rounded_polyline([(6.1, 6.6), (6.95, 20.0), (17.05, 20.0), (17.9, 6.6)], [0, 2.4, 2.4, 0])
-    return [S(lid), S(handle), S(body), S(line(10.1, 10.4, 10.1, 16.2)), S(line(13.9, 10.4, 13.9, 16.2))]
+    return [S(lid), S(handle), S(body)]
+
+
+@icon("delete", "nav", "删除", replaces=["Icons.Rounded.Delete", "Icons.Filled.Delete"])
+def _():
+    return _bin() + [S(line(10.1, 10.4, 10.1, 16.2)), S(line(13.9, 10.4, 13.9, 16.2))]
 
 
 @icon("share", "nav", "分享", replaces=["Icons.Rounded.IosShare"])
@@ -343,3 +347,98 @@ def _():
 def _():
     plane = rounded_poly([(4.3, 4.9), (20.6, 12.0), (4.3, 19.1), (6.95, 12.0)], [1.4, 1.3, 1.4, 0.6])
     return [S(plane), S(line(6.95, 12.0, 11.6, 12.0))]
+
+
+# ---------------------------------------------------------------- from the Paw apps
+
+
+@icon("menu", "nav", "菜单", replaces=["Icons.Rounded.Menu"])
+def _():
+    return [S(line(5, 7.5, 19, 7.5)), S(line(5, 12, 19, 12)), S(line(5, 16.5, 13, 16.5))]
+
+
+@icon("up", "nav", "置顶 / 回到顶部", replaces=["Icons.Rounded.ArrowUpward"])
+def _():
+    return [S(line(12, 19.5, 12, 4.75)), S(polyline([(6.15, 10.6), (12, 4.75), (17.85, 10.6)]))]
+
+
+@icon("north_west", "nav", "填入（左上箭头）", replaces=["Icons.Rounded.NorthWest"])
+def _():
+    return [S(line(17.5, 17.5, 7, 7)), S(polyline([(7, 15), (7, 7), (15, 7)]))]
+
+
+@icon("delete_sweep", "nav", "清空", replaces=["Icons.Rounded.DeleteSweep"])
+def _():
+    return _bin() + [S(line(9.6, 12.6, 14.4, 12.6))]
+
+
+@icon("block", "nav", "拉黑 / 屏蔽", replaces=["Icons.Rounded.Block"])
+def _():
+    return [S(circle(12, 12, 8.5)), S(line(*pt_on(12, 12, 8.5, 225), *pt_on(12, 12, 8.5, 45)))]
+
+
+@icon("check_box", "nav", "多选", replaces=["Icons.Rounded.CheckBox"])
+def _():
+    return [S(squircle(4, 4, 16, 16, r=4.0, s=0.6)), S(polyline([(8.5, 12.3), (10.9, 14.7), (15.5, 9.5)]))]
+
+
+@icon("check_circle", "nav", "认证 / 已完成", replaces=["Icons.Rounded.CheckCircle"])
+def _():
+    return [S(circle(12, 12, 8.5)), S(polyline([(8.5, 12.2), (10.9, 14.5), (15.5, 9.8)]))]
+
+
+@icon("link", "nav", "链接", replaces=["Icons.Rounded.Link"])
+def _():
+    return [
+        S(parse_d("M10.25 7.75 L8 7.75 C5.653 7.75 3.75 9.653 3.75 12 C3.75 14.347 5.653 16.25 8 16.25 L10.25 16.25")),
+        S(parse_d("M13.75 7.75 L16 7.75 C18.347 7.75 20.25 9.653 20.25 12 C20.25 14.347 18.347 16.25 16 16.25 L13.75 16.25")),
+        S(line(8.75, 12, 15.25, 12)),
+    ]
+
+
+@icon("logout", "nav", "退出登录", replaces=["Icons.AutoMirrored.Rounded.Logout"])
+def _():
+    # a door frame open on the right: a container cut short of its right side
+    frame = cut(squircle_box(4.75, 4.25, 16, 19.75, 3.8), box(10.25, -1, 30, 30))
+    return [S(frame), S(line(10.25, 12, 19.75, 12)), S(polyline([(16.25, 8.5), (19.75, 12), (16.25, 15.5)]))]
+
+
+@icon("lock", "nav", "隐私 / 锁", replaces=["Icons.Rounded.Lock"])
+def _():
+    shackle = [M(8.25, 10), L(8.25, 7.75)] + arc_cmds(12, 7.75, 3.75, 180, 360, move=False) + [L(15.75, 10)]
+    return [S(squircle_box(5.25, 10, 18.75, 20.25, 4.1)), S(shackle), S(line(12, 14.15, 12, 16.1))]
+
+
+@icon("bell", "nav", "通知", replaces=["Icons.Rounded.Notifications"])
+def _():
+    dome = [M(6.25, 16.75), L(6.25, 10.6)] + arc_cmds(12, 10.6, 5.75, 180, 360, move=False) + [L(17.75, 16.75)]
+    clapper = parse_d("M10.1 19.55 C10.5 20.15 11.2 20.5 12 20.5 C12.8 20.5 13.5 20.15 13.9 19.55")
+    return [S(dome), S(line(4.75, 16.75, 19.25, 16.75)), S(line(12, 3.25, 12, 4.85)), S(clapper)]
+
+
+@icon("history", "nav", "历史记录", replaces=["Icons.Rounded.History"])
+def _():
+    # a clock face that winds back into an arrowhead at about ten o'clock
+    face = arc(12.5, 12, 7.75, 180, -150.3)
+    return [S(face), S(polyline([(5.35, 4.85), (5.8, 8.18), (9.1, 7.65)])), S(polyline([(12.4, 8.4), (12.4, 12.35), (15, 13.95)]))]
+
+
+@icon("qr", "nav", "二维码", replaces=["Icons.Rounded.QrCode"])
+def _():
+    finders = [S(squircle_box(x, y, x + 6.5, y + 6.5, 2.5)) for x, y in ((3.75, 3.75), (13.75, 3.75), (3.75, 13.75))]
+    dots = [(7, 7), (17, 7), (7, 17), (14.6, 14.6), (19.4, 14.6), (17, 17), (14.6, 19.4), (19.4, 19.4)]
+    return finders + [F(join(*(circle(x, y, 0.95) for x, y in dots)))]
+
+
+def _pin_body():
+    return [M(10, 4.5), L(10, 10), L(7, 13.5), L(17, 13.5), L(14, 10), L(14, 4.5)]
+
+
+@icon("pin", "nav", "置顶 / 固定", replaces=["Icons.Rounded.PushPin"])
+def _():
+    return [S(line(9, 4.5, 15, 4.5)), S(_pin_body()), S(line(12, 13.5, 12, 19.5))]
+
+
+@icon("pin_filled", "nav", "已置顶", replaces=["Icons.Filled.PushPin"])
+def _():
+    return [S(line(9, 4.5, 15, 4.5)), FS(_pin_body() + [Z]), S(line(12, 13.5, 12, 19.5))]

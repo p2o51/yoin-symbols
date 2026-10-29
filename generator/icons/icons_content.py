@@ -107,13 +107,16 @@ def _():
     return [S(crescent())]
 
 
-@icon("light_mode", "content", "屏幕常亮 / 浅色", replaces=["Icons.Rounded.LightMode"])
-def _():
+def _sun(cx=12.0, cy=12.0):
     # a sun: the disc and eight short rays on one radius, so the diagonals
     # read the same length as the straight ones
-    cx, cy = 12.0, 12.0
     rays = [S(line(*pt_on(cx, cy, 6.35, a), *pt_on(cx, cy, 8.35, a))) for a in range(0, 360, 45)]
     return [S(circle(cx, cy, 3.55))] + rays
+
+
+@icon("light_mode", "content", "屏幕常亮 / 浅色", replaces=["Icons.Rounded.LightMode"])
+def _():
+    return _sun()
 
 
 @icon("speed", "content", "播放速度")
@@ -172,3 +175,90 @@ def _():
     back = cut(back, unary_union([box(x - 1.9, y - 1.9, 30, 30)]))
     return [S(squircle(x, y, w, h, r=2.9, s=0.6)), S(back)]
 
+
+# ---------------------------------------------------------------- from the Paw apps
+
+
+@icon("brightness", "content", "亮度", replaces=["Icons.Rounded.BrightnessMedium"])
+def _():
+    # light_mode's sun with its left half filled
+    half = [M(12, 8.45)] + arc_cmds(12, 12, 3.55, -90, -270, move=False) + [Z]
+    return _sun() + [F(half)]
+
+
+@icon("dark_mode", "content", "深色模式", replaces=["Icons.Rounded.DarkMode"])
+def _():
+    moon = parse_d(
+        "M10.594 3.82 C6.435 4.535 3.474 8.257 3.713 12.471 C3.953 16.684 7.316 20.047 11.529 20.287 "
+        "C15.743 20.526 19.465 17.565 20.18 13.406 C17.441 15.269 13.764 14.922 11.421 12.579 "
+        "C9.078 10.236 8.731 6.559 10.594 3.82 Z"
+    )
+    star = parse_d(
+        "M17.6 3.95 C17.704 5.43 18.17 5.896 19.65 6 C18.17 6.104 17.704 6.57 17.6 8.05 "
+        "C17.496 6.57 17.03 6.104 15.55 6 C17.03 5.896 17.496 5.43 17.6 3.95 Z"
+    )
+    return [S(moon), S(star)]
+
+
+@icon("palette", "content", "主题色", replaces=["Icons.Rounded.Palette"])
+def _():
+    board = parse_d(
+        "M12 3.75 C7.444 3.75 3.75 7.444 3.75 12 C3.75 16.556 7.444 20.25 12 20.25 C13.05 20.25 13.75 19.5 13.75 18.6 "
+        "C13.75 18.15 13.6 17.8 13.35 17.5 C13.1 17.2 12.95 16.85 12.95 16.45 C12.95 15.55 13.65 14.85 14.55 14.85 "
+        "L16.4 14.85 C18.526 14.85 20.25 13.126 20.25 11 C20.25 6.994 16.556 3.75 12 3.75 Z"
+    )
+    dots = [(7.6, 12.2), (9.1, 8.4), (12.9, 7.1), (16.4, 8.9)]
+    return [S(board), F(join(*(circle(x, y, 0.95) for x, y in dots)))]
+
+
+@icon("image", "content", "图片", replaces=["Icons.Rounded.Image"])
+def _():
+    return [
+        S(squircle_box(3.75, 3.75, 20.25, 20.25, 5.6)),
+        S(parse_d("M4.4 16.6 L8.56 12.44 C9.146 11.854 10.096 11.854 10.682 12.44 L14.2 15.95")),
+        S(parse_d("M12.85 14.6 L14.31 13.14 C14.896 12.554 15.846 12.554 16.432 13.14 L19.75 16.45")),
+        S(circle(15.3, 8.6, 1.55)),
+    ]
+
+
+@icon("camera", "content", "截图 / 相机", replaces=["Icons.Rounded.PhotoCamera"])
+def _():
+    # a landscape container whose top edge rises into the viewfinder bump
+    body = cut(squircle_box(3.75, 6.25, 20.25, 19.75, 4.4), box(8.6, 0, 15.4, 7))
+    bump = parse_d("M8.6 6.25 L9.55 4.6 C9.8 4.17 10.25 3.9 10.75 3.9 L13.25 3.9 C13.75 3.9 14.2 4.17 14.45 4.6 L15.4 6.25")
+    return [S(body + bump[1:]), S(circle(12, 12.75, 3.25))]
+
+
+@icon("article", "content", "专栏 / 文章", replaces=["Icons.AutoMirrored.Rounded.Article"])
+def _():
+    return [
+        S(squircle_box(5, 3.75, 19, 20.25, 4.8)),
+        S(line(8.6, 8.6, 15.4, 8.6)),
+        S(line(8.6, 12, 15.4, 12)),
+        S(line(8.6, 15.4, 12.4, 15.4)),
+    ]
+
+
+@icon("calendar", "content", "日历", replaces=["Icons.Rounded.CalendarToday"])
+def _():
+    return [
+        S(squircle_box(4.5, 5.5, 19.5, 19.5, 3.4)),
+        S(line(4.5, 9.5, 19.5, 9.5)),
+        S(line(8.5, 3.5, 8.5, 6.5)),
+        S(line(15.5, 3.5, 15.5, 6.5)),
+    ]
+
+
+@icon("place", "content", "地点", replaces=["Icons.Rounded.Place"])
+def _():
+    pin = parse_d(
+        "M12 20.5 C12 20.5 18.5 14.8 18.5 10 C18.5 6.41 15.59 3.5 12 3.5 C8.41 3.5 5.5 6.41 5.5 10 "
+        "C5.5 14.8 12 20.5 12 20.5 Z"
+    )
+    return [S(pin), S(circle(12, 10, 2.25))]
+
+
+@icon("waves", "content", "滚动边缘（潮线）", replaces=["Icons.Rounded.Waves"])
+def _():
+    wave = "c1.5 0 1.5 -1.5 3 -1.5s1.5 1.5 3 1.5s1.5 -1.5 3 -1.5s1.5 1.5 3 1.5s1.5 -1.5 3 -1.5s1.5 1.5 3 1.5"
+    return [S(parse_d("M3 9.5" + wave)), S(parse_d("M3 15.5" + wave))]
