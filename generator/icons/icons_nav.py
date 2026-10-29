@@ -173,6 +173,8 @@ def _():
 
 # ---------------------------------------------------------------- edit / delete / share / refresh / launch
 
+OPEN_GAP = 3.95  # cast's wave spacing: how far a container stops short of what leaves it
+
 def _pencil(tip=(4.4, 19.6), length=18.5, width=4.3, cone=4.1, eraser=3.4):
     ux, uy = 1 / math.sqrt(2), -1 / math.sqrt(2)  # along the pencil, towards top-right
     nx, ny = 1 / math.sqrt(2), 1 / math.sqrt(2)   # across the pencil
@@ -215,8 +217,9 @@ def _():
 @icon("share", "nav", "分享", replaces=["Icons.Rounded.IosShare"])
 def _():
     tray = squircle(4.75, 9.4, 14.5, 10.85, r=3.3, s=0.6)
-    # Open at the top, and the right wall stops at half height instead of wrapping over.
-    tray = cut(tray, unary_union([box(8.6, 5, 15.4, 11), box(15.4, 5, 21, 14.8)]))
+    # The opening rule shared with launch and cast: one side opens wide past its corner,
+    # the other junction only opens by the cast waves' spacing (3.95 centre to centre).
+    tray = cut(tray, unary_union([box(0, 5, 12 + OPEN_GAP, 12.6), box(12 + OPEN_GAP, 5, 21, 9.95)]))
     return [S(tray), S(line(12, 14.6, 12, 3.75)), S(polyline([(8.4, 7.35), (12, 3.75), (15.6, 7.35)]))]
 
 
@@ -283,7 +286,8 @@ def _():
 @icon("launch", "nav", "在外部打开", replaces=["Icons.Filled.Launch"])
 def _():
     boxp = squircle(4.5, 4.5, 15, 15, r=3.7, s=0.6)
-    boxp = cut(boxp, box(10.4, 0, 30, 13.6))
+    # top edge and top-left corner open wide; the right wall stops a wave spacing below the head
+    boxp = cut(boxp, unary_union([box(-1, -1, 30, 7.0), box(-1, -1, 7.5, 8.6), box(16.5, -1, 30, 10.1 + OPEN_GAP)]))
     return [S(boxp), S(line(12.1, 11.9, 19.4, 4.6)), S(polyline([(13.9, 4.6), (19.4, 4.6), (19.4, 10.1)]))]
 
 

@@ -672,13 +672,13 @@ demo({ id: 'library-add', title: '加入资料库 · 等待确认', where: '加�
 
 /* 3. AI sparkle */
 demo({ id: 'sparkle', api: 'rememberSparkleSymbolPainter(generating, filled)', title: 'AI 生成 · Gemini', where: 'AI 生成 · 拟题 · 摘要',
-  desc: '大星每次转 90° 后停一下，小星错拍闪一下；生成完成时两颗星填实，并轻微放大回落。等待期间按钮不换成转圈，尺寸不变。',
+  desc: '魔法棒顶上的星每次转 90° 后停一下，两点光错拍闪一下；生成完成时星填实，并轻微放大回落。等待期间按钮不换成转圈，尺寸不变。',
   token: '旋转 ' + TOK['E.default'].name + '；填充 defaultEffects', reduced: '星不转，只做透明度呼吸；完成时直接填实。',
   build({ well, btn }) {
     const g = G.sparkle, svg = well();
-    const gm = S('g', null, svg), gn = S('g', null, svg);
+    P(svg, g.stick);
+    const gm = S('g', null, svg), gn = g.dots.map(d => { const e = S('g', null, svg); P(e, d, { fill: 'currentColor', stroke: 'none' }); return e; });
     const mOut = P(gm, g.main), mFill = P(gm, g.main, { fill: 'currentColor', opacity: 0 });
-    const nOut = P(gn, g.mini), nFill = P(gn, g.mini, { fill: 'currentColor', opacity: 0 });
     const rot = new Spring(0, 'E.default', .05), mini = new Spring(1, 'E.fast'), fill = new Spring(0, 'fx.default'), pop = new Spring(1, 'E.fast'), pulse = new Spring(1, 'fx.slow');
     let state = 'idle', hold = 0;
     btn('开始生成', () => { state = 'gen'; fill.to(0); hold = 0; step(); }, true);
@@ -693,10 +693,10 @@ demo({ id: 'sparkle', api: 'rememberSparkleSymbolPainter(generating, filled)', t
         else if (rot.rest) { hold += dt; if (hold > .3) { hold = 0; step(); } }
       } else if (state === 'finishing' && (rot.rest || Engine.reduced)) { state = 'done'; fill.to(1); pop.snap(Engine.reduced ? 1 : 1.16).to(1); pulse.to(1); }
       else if (state !== 'gen' && pulse.t !== 1) pulse.to(1);
-      const [mx, my] = g.mainC, [nx, ny] = g.miniC;
+      const [mx, my] = g.mainC;
       gm.setAttribute('transform', `rotate(${f3(rot.x)} ${mx} ${my}) ` + around(mx, my, pop.x));
-      gn.setAttribute('transform', around(nx, ny, mini.x * pop.x));
-      mFill.setAttribute('opacity', f3(fill.x)); nFill.setAttribute('opacity', f3(fill.x));
+      gn.forEach((e, i) => e.setAttribute('transform', around(g.dotC[i][0], g.dotC[i][1], mini.x * pop.x)));
+      mFill.setAttribute('opacity', f3(fill.x));
       svg.setAttribute('opacity', f3(pulse.x));
     } };
   } });

@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- `sparkle` and `sparkle_filled` are now a short wand with the star at its tip and two specks of light, instead of the large and small star every AI feature uses. `rememberSparkleSymbolPainter` turns the star and blinks the specks; the SVG parts are `sparkle-main`, `sparkle-stick`, `sparkle-dot-0` and `sparkle-dot-1`.
+- `star` and `star_filled` are a size larger (outer radius 8.85 → 10.4), as heavy as `favorite`.
+- `play_arrow` is drawn on a larger triangle so it reaches the same edges as `play_filled`; it was 11.5 × 13.9 against 12.3 × 15.1.
+- `reviews`: the bubble holds two lines of text and a dot instead of a star that closed up at 24 px.
+- `share`, `launch`, `cast` and `cast_connected` share one opening rule: where something leaves the container, one side opens wide past its corner and the other stops one wave spacing (3.95) short. `share` opens on the left, `launch` loses its top edge and top-left corner, and `cast` now leaves the same gap at both ends of the outer wave.
+
 ## 0.2.0 · 2026-10-19
 
 - New symbol `undo` (navigation & actions, replaces `Icons.AutoMirrored.Rounded.Undo`): a hook arrow that turns back on itself, with a 9 × 4.5 chevron head. It flips in right-to-left layouts, like `back`.

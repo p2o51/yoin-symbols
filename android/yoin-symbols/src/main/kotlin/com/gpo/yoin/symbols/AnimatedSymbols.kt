@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.Group
 import androidx.compose.ui.graphics.vector.Path
+import androidx.compose.ui.graphics.vector.PathBuilder
 import androidx.compose.ui.graphics.vector.PathData
 import androidx.compose.ui.graphics.vector.PathNode
 import androidx.compose.ui.graphics.vector.VectorComposable
@@ -53,7 +54,18 @@ private val WenNodes: List<List<PathNode>> by lazy { SymbolGeometry.WenPaths.map
 private val LatinNodes: List<List<PathNode>> by lazy { SymbolGeometry.LatinPaths.map(::addPathNodes) }
 private val HeartNodes: List<PathNode> by lazy { addPathNodes(SymbolGeometry.Heart) }
 private val SparkleMainNodes: List<PathNode> by lazy { addPathNodes(SymbolGeometry.SparkleMain) }
-private val SparkleMiniNodes: List<PathNode> by lazy { addPathNodes(SymbolGeometry.SparkleMini) }
+private val SparkleStickNodes: List<PathNode> by lazy { addPathNodes(SymbolGeometry.SparkleStick) }
+private val SparkleDotNodes: List<List<PathNode>> by lazy {
+    val d = SymbolGeometry.SparkleDots
+    List(d.size / 2) { i -> dotNodes(d[2 * i], d[2 * i + 1], 0.95f) }
+}
+
+private fun dotNodes(cx: Float, cy: Float, r: Float): List<PathNode> = PathBuilder().apply {
+    moveTo(cx - r, cy)
+    arcToRelative(r, r, 0f, true, true, 2 * r, 0f)
+    arcToRelative(r, r, 0f, true, true, -2 * r, 0f)
+    close()
+}.nodes
 private val Sqrt2 = sqrt(2f)
 private val EqualizerStagger = longArrayOf(0L, 80L, 160L, 80L, 0L)
 
@@ -596,9 +608,9 @@ public fun rememberEqualizerSymbolPainter(
 // ---------------------------------------------------------------- sparkle (AI)
 
 /**
- * The AI sparkle. While [generating], the large star turns a quarter turn and rests,
- * and the small star blinks off-beat. [filled] cross-fades to the solid version,
- * for example once a result has arrived.
+ * The AI sparkle, a wand with a star at its tip. While [generating], the star turns a
+ * quarter turn and rests, and the two specks of light blink off-beat. [filled]
+ * cross-fades to the solid star, for example once a result has arrived.
  */
 @Composable
 public fun rememberSparkleSymbolPainter(
@@ -652,15 +664,25 @@ public fun rememberSparkleSymbolPainter(
         ) {
             SparklePath(SparkleMainNodes, alpha, f)
         }
+        Path(
+            pathData = SparkleStickNodes,
+            stroke = Ink,
+            strokeAlpha = alpha,
+            strokeLineWidth = YoinSymbolStrokeWidth,
+            strokeLineCap = StrokeCap.Round,
+        )
         val s = max(0f, mini.value)
-        Group(
-            name = "mini",
-            pivotX = SymbolGeometry.SparkleMiniX,
-            pivotY = SymbolGeometry.SparkleMiniY,
-            scaleX = s,
-            scaleY = s,
-        ) {
-            SparklePath(SparkleMiniNodes, alpha, f)
+        val dots = SymbolGeometry.SparkleDots
+        SparkleDotNodes.forEachIndexed { i, nodes ->
+            Group(
+                name = "dot$i",
+                pivotX = dots[2 * i],
+                pivotY = dots[2 * i + 1],
+                scaleX = s,
+                scaleY = s,
+            ) {
+                Path(pathData = nodes, fill = Ink, fillAlpha = alpha)
+            }
         }
     }
 }

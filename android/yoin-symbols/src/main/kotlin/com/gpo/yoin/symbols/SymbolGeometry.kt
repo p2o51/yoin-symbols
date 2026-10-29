@@ -27,12 +27,12 @@ internal object SymbolGeometry {
     val EqualizerX: FloatArray = floatArrayOf(4.5f, 8.25f, 12f, 15.75f, 19.5f)
     val EqualizerHeights: FloatArray = floatArrayOf(4.6f, 10.6f, 15.8f, 8.6f, 4f)
 
-    const val SparkleMain: String = "M10.6 6.15 C10.963 11.37 12.63 13.037 17.85 13.4 C12.63 13.763 10.963 15.43 10.6 20.65 C10.237 15.43 8.57 13.763 3.35 13.4 C8.57 13.037 10.237 11.37 10.6 6.15 Z"
-    const val SparkleMini: String = "M18.1 3.55 C18.218 5.242 18.758 5.783 20.45 5.9 C18.758 6.018 18.218 6.558 18.1 8.25 C17.983 6.558 17.442 6.018 15.75 5.9 C17.442 5.783 17.983 5.242 18.1 3.55 Z"
-    const val SparkleMainX: Float = 10.6f
-    const val SparkleMainY: Float = 13.4f
-    const val SparkleMiniX: Float = 18.1f
-    const val SparkleMiniY: Float = 5.9f
+    // sparkle: a wand; the star turns about its centre, each dot blinks about its own
+    const val SparkleMain: String = "M16.3 3.1 C16.53 6.412 17.588 7.47 20.9 7.7 C17.588 7.93 16.53 8.988 16.3 12.3 C16.07 8.988 15.012 7.93 11.7 7.7 C15.012 7.47 16.07 6.412 16.3 3.1 Z"
+    const val SparkleStick: String = "M4.6 19.4 L13.2 10.8"
+    const val SparkleMainX: Float = 16.3f
+    const val SparkleMainY: Float = 7.7f
+    val SparkleDots: FloatArray = floatArrayOf(9f, 5.2f, 19.4f, 14.8f)
 
     // play mode: loop halves and shuffle strands as matching 7-segment cubic chains
     // (start x, y, then c1x, c1y, c2x, c2y, x, y per segment). The under strand's shuffle

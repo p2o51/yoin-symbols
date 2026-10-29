@@ -17,7 +17,9 @@ CAST_R = (4.35, 8.3)
 def cast_screen():
     s = squircle(CAST["x"], CAST["y"], CAST["w"], CAST["h"], r=CAST["r"], s=0.6)
     ox, oy = CAST_O
-    region = box(-5, oy - CAST_R[1] - 1.55, ox + CAST_R[1] + 1.55, 30)
+    # both ends stop one wave spacing short of the outer wave
+    gap = CAST_R[1] - CAST_R[0]
+    region = unary_union([box(-5, oy - CAST_R[1] - gap, ox + 2, 30), box(-5, oy - 2, ox + CAST_R[1] + gap, 30)])
     return cut(s, region)
 
 

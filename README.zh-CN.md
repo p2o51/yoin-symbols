@@ -48,7 +48,7 @@ Icon(YoinSymbols.HomeFilled, contentDescription = null, tint = MaterialTheme.col
 | `rememberFavoriteSymbolPainter(favorite)` | 心跳一下，实心从中心长出 |
 | `rememberExpandSymbolPainter(expanded)` | 箭头先压平再翻折，像合页 |
 | `rememberEqualizerSymbolPainter(playing)` | 柱子追随随机高度，停止时以低刚度 spring 缩成圆点 |
-| `rememberSparkleSymbolPainter(generating, filled)` | 大星每次转 90° 后停一下，小星错拍闪烁 |
+| `rememberSparkleSymbolPainter(generating, filled)` | 魔法棒顶上的星每次转 90° 后停一下，两点光错拍闪烁 |
 | `rememberPlayModeSymbolPainter(mode)` | 一个播放模式按钮：随机 × 列表 / 单曲循环，共四种。环被剪开，下半股像翻牌一样翻成交叉的一股；单曲循环时「1」弹出，随机 + 单曲循环时「1」缩小滑进交叉左边的空隙 |
 
 ```kotlin

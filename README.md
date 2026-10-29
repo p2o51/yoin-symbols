@@ -48,7 +48,7 @@ These return a `Painter`, so they drop into any `Icon` and take its tint.
 | `rememberFavoriteSymbolPainter(favorite)` | One heartbeat, then the fill grows from the centre |
 | `rememberExpandSymbolPainter(expanded)` | The chevron flattens and folds over like a hinge |
 | `rememberEqualizerSymbolPainter(playing)` | Bars follow random levels, then sink into dots on a slow spring |
-| `rememberSparkleSymbolPainter(generating, filled)` | The star turns a quarter at a time, the small star blinks off-beat |
+| `rememberSparkleSymbolPainter(generating, filled)` | The star on the wand turns a quarter at a time, the two specks blink off-beat |
 | `rememberPlayModeSymbolPainter(mode)` | One play-mode button: shuffle × repeat all / one, four modes. The loop is cut open and its lower half turns over into the crossing strand; the 1 pops in for repeat one, and rides into the wedge left of the crossing for shuffle + repeat one |
 
 ```kotlin
