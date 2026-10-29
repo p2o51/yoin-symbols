@@ -1,6 +1,6 @@
 ---
 name: add-symbol
-description: Add, port or change a Yoin Symbols icon. Use whenever Yoin, PiliPaw, WeiPaw, CronPaw or any other app needs an icon this set does not have, when porting an icon an app drew itself, or when refining a symbol's drawing. Apps never draw icons or copy symbol files; every icon goes through this repository.
+description: Add, port or change a Yoin Symbols icon. Use whenever Yoin, PiliPaw, WeiPaw, CronPaw, PipePaw or any other app needs an icon this set does not have, when porting an icon an app drew itself, or when refining a symbol's drawing. Apps never draw icons or copy symbol files; every icon goes through this repository.
 ---
 
 # Adding a symbol

@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- 74 new symbols from the Paw apps (PiliPaw, WeiPaw, CronPaw), which now take every icon from here: a new group, video & social (`social`: thumb_up, coin, paw, comment, danmaku, fullscreen, pip, hd, replay, …), general symbols in the existing groups (menu, link, lock, bell, history, block, check_box, calendar, image, camera, mic, keyboard, …), and the filled twins person_filled, pin_filled and stop_filled. `reply`, `forward`, `logout`, `replay` and `danmaku_scroll` flip in right-to-left layouts; the paw's toes and pad are parts (`toe-0` … `toe-3`, `pad`).
+- 74 new symbols from the Paw apps (PiliPaw, WeiPaw, CronPaw, PipePaw), which now take every icon from here: a new group, video & social (`social`: thumb_up, coin, paw, comment, danmaku, fullscreen, pip, hd, replay, …), general symbols in the existing groups (menu, link, lock, bell, history, block, check_box, calendar, image, camera, mic, keyboard, …), and the filled twins person_filled, pin_filled and stop_filled. `reply`, `forward`, `logout`, `replay` and `danmaku_scroll` flip in right-to-left layouts; the paw's toes and pad are parts (`toe-0` … `toe-3`, `pad`).
 - `sparkle` and `sparkle_filled` are now a short wand with the star at its tip and two specks of light, instead of the large and small star every AI feature uses. `rememberSparkleSymbolPainter` turns the star and blinks the specks; the SVG parts are `sparkle-main`, `sparkle-stick`, `sparkle-dot-0` and `sparkle-dot-1`.
 - `star` and `star_filled` are a size larger (outer radius 8.85 → 10.4), as heavy as `favorite`.
 - `play_arrow` is drawn on a larger triangle so it reaches the same edges as `play_filled`; it was 11.5 × 13.9 against 12.3 × 15.1.

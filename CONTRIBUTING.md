@@ -32,7 +32,7 @@ The build appends the new symbol to `generator/codepoints.json`. Code points are
 
 ## Requesting or adding a symbol from an app
 
-Yoin and the Paw apps (PiliPaw, WeiPaw, CronPaw) take every icon from this repository. An app never draws its own icon, never copies `YoinSymbols.kt` or an SVG from here, and never keeps a private symbols module. When an app needs a symbol that is not here:
+Yoin and the Paw apps (PiliPaw, WeiPaw, CronPaw, PipePaw) take every icon from this repository. An app never draws its own icon, never copies `YoinSymbols.kt` or an SVG from here, and never keeps a private symbols module. When an app needs a symbol that is not here:
 
 1. **Add it here.** Search the [gallery](https://p2o51.github.io/yoin-symbols/) first (names, Chinese names and Material names are all searchable); reuse a symbol that means the same thing. Otherwise branch this repository, add the symbol as described above, run the build and open a pull request. Name it after what it shows or means (`thumb_up`, `danmaku_off`), not after the screen that uses it. If the app already has a drawing, port it and overlay the two; keep them within half a unit unless you are fixing a rule, and say what you changed.
 2. **Use it in the app.** Apps build this repository from source with a composite build of a checkout next to them (`../yoin-symbols`), so as soon as that checkout has the new symbol (your branch, or `main` after a `git pull`), the app can write `YoinSymbols.NewSymbol`. No release is needed. The app's `settings.gradle.kts`:

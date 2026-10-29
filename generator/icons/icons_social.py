@@ -1,6 +1,6 @@
 """Video & social: reactions, comments, feeds and the video player.
 
-Drawn first for the Paw apps (PiliPaw, WeiPaw, CronPaw) and moved here so every app
+Drawn first for the Paw apps (PiliPaw, WeiPaw, CronPaw, PipePaw) and moved here so every app
 reads them from one source.
 """
 from geom import *
