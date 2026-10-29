@@ -344,11 +344,22 @@ def _():
     return [S(circle(12, 12, 8.5)), S(circle(12, 12, 2.3)), S(arc(12, 12, 5.35, 198, 252))]
 
 
-@icon("person", "music", "个人 / 账号", replaces=["Icons.Filled.Person"])
-def _():
+def _person():
     head = ellipse(12, 8.05, 3.55, 3.8)
     body = [M(4.8, 19.9), C(4.8, 16.35, 7.95, 14.55, 12, 14.55), C(16.05, 14.55, 19.2, 16.35, 19.2, 19.9)]
+    return head, body
+
+
+@icon("person", "music", "个人 / 账号", replaces=["Icons.Filled.Person"])
+def _():
+    head, body = _person()
     return [S(head), S(body)]
+
+
+@icon("person_filled", "music", "个人（选中）", replaces=["Icons.Rounded.Person"])
+def _():
+    head, body = _person()
+    return [FS(head), FS(body + [Z])]
 
 
 @icon("artist", "music", "艺人")
@@ -521,3 +532,18 @@ def _():
 def _():
     tri = rounded_poly([(10.05, 7.95), (16.55, 12.0), (10.05, 16.05)], [0.75, 0.85, 0.75])
     return [S(circle(12, 12, 8.5)), S(tri)]
+
+
+# ---------------------------------------------------------------- from the Paw apps
+
+STOP = (7.75, 7.75, 16.25, 16.25)
+
+
+@icon("stop", "music", "停止", replaces=["Icons.Rounded.Stop"])
+def _():
+    return [S(squircle_box(*STOP, 2.4))]
+
+
+@icon("stop_filled", "music", "停止（实心）", replaces=["Icons.Filled.Stop"])
+def _():
+    return [FS(squircle_box(*STOP, 2.4))]

@@ -11,6 +11,7 @@ unless a layer says otherwise.
 from __future__ import annotations
 
 import math
+import re
 from typing import Iterable, List, Sequence, Tuple
 
 Pt = Tuple[float, float]
@@ -243,6 +244,85 @@ def svg_arc_to_cubics(x1, y1, rx, ry, phi_deg, fa, fs, x2, y2) -> List[Cmd]:
     return out
 
 
+# --------------------------------------------------------------------------- path data
+
+_PATH_TOKEN = re.compile(r"[MmLlHhVvCcSsQqTtAaZz]|[-+]?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?")
+
+
+def parse_d(d: str) -> List[Cmd]:
+    """SVG path data -> absolute M / L / C / Z.
+
+    For free-form outlines (a flame, a paw pad) that are clearer as one path than as
+    helper calls. Every SVG command is accepted, relative or absolute; H / V become L,
+    S / Q / T become C and arcs become cubics, so the output keeps the M L C Z rule.
+    """
+    tokens = _PATH_TOKEN.findall(d)
+    out: List[Cmd] = []
+    i = 0
+    op = None
+    x = y = sx = sy = 0.0
+    last_c2 = last_q = None  # reflection points for S and T
+
+    def num():
+        nonlocal i
+        v = float(tokens[i])
+        i += 1
+        return v
+
+    while i < len(tokens):
+        if tokens[i].isalpha():
+            op = tokens[i]
+            i += 1
+            if op in "Zz":
+                out.append(Z)
+                x, y = sx, sy
+                last_c2 = last_q = None
+                continue
+        rel = op.islower()
+        ox, oy = (x, y) if rel else (0.0, 0.0)
+        o = op.upper()
+        if o == "M":
+            x, y = ox + num(), oy + num()
+            sx, sy = x, y
+            out.append(M(x, y))
+            op = "l" if rel else "L"  # extra pairs after M are line-tos
+            last_c2 = last_q = None
+        elif o in "LHV":
+            if o == "L":
+                x, y = ox + num(), oy + num()
+            elif o == "H":
+                x = ox + num()
+            else:
+                y = oy + num()
+            out.append(L(x, y))
+            last_c2 = last_q = None
+        elif o in "CS":
+            if o == "C":
+                x1, y1 = ox + num(), oy + num()
+            else:
+                x1, y1 = (2 * x - last_c2[0], 2 * y - last_c2[1]) if last_c2 else (x, y)
+            x2, y2 = ox + num(), oy + num()
+            x, y = ox + num(), oy + num()
+            out.append(C(x1, y1, x2, y2, x, y))
+            last_c2, last_q = (x2, y2), None
+        elif o in "QT":
+            if o == "Q":
+                qx, qy = ox + num(), oy + num()
+            else:
+                qx, qy = (2 * x - last_q[0], 2 * y - last_q[1]) if last_q else (x, y)
+            ex, ey = ox + num(), oy + num()
+            out.append(C(x + 2 / 3 * (qx - x), y + 2 / 3 * (qy - y), ex + 2 / 3 * (qx - ex), ey + 2 / 3 * (qy - ey), ex, ey))
+            x, y = ex, ey
+            last_c2, last_q = None, (qx, qy)
+        elif o == "A":
+            rx, ry, phi, fa, fs = num(), num(), num(), num(), num()
+            ex, ey = ox + num(), oy + num()
+            out.extend(svg_arc_to_cubics(x, y, rx, ry, phi, int(fa), int(fs), ex, ey))
+            x, y = ex, ey
+            last_c2 = last_q = None
+    return out
+
+
 # --------------------------------------------------------------------------- rounded shapes
 
 def rrect(x, y, w, h, r, start="tl") -> List[Cmd]:
@@ -334,6 +414,11 @@ def squircle(x, y, w, h, r=4.6, s=0.62, corners=(True, True, True, True)) -> Lis
 
 def squircle_c(cx, cy, w, h, r=4.6, s=0.62, **kw):
     return squircle(cx - w / 2, cy - h / 2, w, h, r, s, **kw)
+
+
+def squircle_box(left, top, right, bottom, reach, **kw):
+    """squircle(…, s=0.6) by its edges and the reach of each corner's bend along the edges (1.6 r)."""
+    return squircle(left, top, right - left, bottom - top, r=reach / 1.6, s=0.6, **kw)
 
 
 def _unit(vx, vy):

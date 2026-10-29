@@ -220,7 +220,7 @@ a.chip{text-decoration:none;display:inline-block}
     <div>
       <p class="eyebrow" id="eyebrow">开源图标 · Compose · Web · Flutter · Figma</p>
       <h1>Yoin Symbols</h1>
-      <p class="lede">为音乐播放器 Yoin 画的一套线条图标：更细的线、更大的留白、连续曲率的容器和带点手写感的曲线。开源，Jetpack Compose、Web、Flutter 和 Figma 都能直接用；有状态的图标按“同一组线条变形”来画，可以用 spring 驱动。</p>
+      <p class="lede">为音乐播放器 Yoin 和 Paw 系列 App 画的一套线条图标：更细的线、更大的留白、连续曲率的容器和带点手写感的曲线。开源，Jetpack Compose、Web、Flutter 和 Figma 都能直接用；有状态的图标按“同一组线条变形”来画，可以用 spring 驱动。</p>
       <ul class="specs">
         <li>24 × 24 dp</li><li>描边 1.5</li><li>圆端点 · 圆转角</li><li>连续曲率容器</li><li>下层线条自动留缝</li><li>currentColor · tint</li>
       </ul>
@@ -561,7 +561,7 @@ const hero = (() => {
 
 /* ---------------------------------------------------------------- icon library */
 const ICONS = DATA.icons;
-const GROUPS = [['all', '全部'], ['nav', '导航与通用'], ['music', '播放与音乐'], ['content', '内容与笔记'], ['device', '设备与服务']];
+const GROUPS = [['all', '全部'], ['nav', '导航与通用'], ['music', '播放与音乐'], ['content', '内容与笔记'], ['device', '设备与服务'], ['social', '视频与社交']];
 let fGroup = 'all', fQuery = '', selected = store.get('selected', 'translate'), gsize = 32;
 
 $('#filters').innerHTML = GROUPS.map(([v, l]) => `<button data-v="${v}" aria-pressed="${v === 'all'}">${l}</button>`).join('');

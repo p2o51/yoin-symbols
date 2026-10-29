@@ -2,7 +2,7 @@
 
 ![Yoin Symbols](docs/cover.png)
 
-一套轻、圆、容器带连续曲率的线条图标。96 个符号最初是为音乐播放器 Yoin 画的，现在从同一份源码生成 Jetpack Compose、Web、Flutter 和 Figma 四个版本。
+一套轻、圆、容器带连续曲率的线条图标。170 个符号是为音乐播放器 Yoin 和 Paw 系列 App（PiliPaw、WeiPaw、CronPaw、PipePaw）画的，从同一份源码生成 Jetpack Compose、Web、Flutter 和 Figma 四个版本。
 
 [图库](https://p2o51.github.io/yoin-symbols/) · [Figma](https://www.figma.com/design/g0H4CfkagF8p1N4vuPYxQA) · [npm](https://www.npmjs.com/package/yoin-symbols) · [pub.dev](https://pub.dev/packages/yoin_symbols) · [Maven Central](https://central.sonatype.com/artifact/io.github.p2o51/yoin-symbols) · [English](README.md)
 
@@ -17,7 +17,8 @@
 - 24 × 24 网格，1.5 描边，圆端点、圆转角
 - 连续曲率容器（圆角平滑 60 %）
 - 线条交叉处真的断开，不靠遮罩
-- 10 个符号有实心版，外沿和线框版完全重合
+- 20 个符号有实心版，外沿和线框版完全重合
+- 五个分组：导航与通用、播放与音乐、内容与笔记、设备与服务、视频与社交
 - 7 个符号在 Compose 里带动效，用 Material 3 Expressive 的 spring
 
 ## Jetpack Compose
@@ -137,12 +138,18 @@ dependencyResolutionManagement {
 }
 ```
 
-**Android，改完即生效。** 用复合构建把依赖替换成源码。App 和本项目的 Android Gradle Plugin 版本一致时最稳（这里是 9.1）：
+**Android，改完即生效。** 用复合构建把依赖替换成源码。Yoin 和 Paw 系列 App 都这样用：默认找 App 旁边的 `../yoin-symbols`，CI 用 `-PyoinSymbolsDir` 指定路径，两者都没有时退回 Maven Central。App 和本项目的 Android Gradle Plugin 版本一致时最稳（这里是 9.2）：
 
 ```kotlin
 // App 的 settings.gradle.kts
-val yoinSymbols = file("../yoin-symbols/android")
-if (yoinSymbols.exists()) includeBuild(yoinSymbols)
+val yoinSymbolsDir = providers.gradleProperty("yoinSymbolsDir").getOrElse("../yoin-symbols")
+val yoinSymbolsBuild = file("$yoinSymbolsDir/android")
+if (yoinSymbolsBuild.isDirectory) includeBuild(yoinSymbolsBuild)
+```
+
+```kotlin
+// app/build.gradle.kts
+implementation("io.github.p2o51:yoin-symbols:0.2.0")
 ```
 
 **Web。** `npm i ../yoin-symbols/web`
@@ -159,7 +166,7 @@ dependencies:
 
 ```
 generator/          唯一的源：每个符号一个 Python 函数，加上各平台的生成器
-  icons/            几何工具和符号本身（icons_nav.py、icons_music.py……）
+  icons/            几何工具和符号本身（icons_nav.py、icons_music.py、icons_social.py……）
   build.py          重新生成下面所有内容
 svg/                规范 SVG
 android/            Compose 库：生成的 ImageVector 与 drawable，手写的动效
@@ -174,6 +181,8 @@ python3 generator/build.py
 ```
 
 生成物也提交进仓库，CI 会检查它们和源码是否一致。新增符号见 [CONTRIBUTING.md](CONTRIBUTING.md)，发布流程见 [RELEASING.md](RELEASING.md)。
+
+App 缺图标时，先在这里加，再到 App 里引用，步骤见 [从 App 请求或添加新图标](CONTRIBUTING.md#requesting-or-adding-a-symbol-from-an-app)。App 不自己画图标，也不复制这里的文件。
 
 设计说明：[docs/zh-CN/DESIGN.md](docs/zh-CN/DESIGN.md) · [docs/zh-CN/MOTION.md](docs/zh-CN/MOTION.md)
 

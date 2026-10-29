@@ -4,7 +4,8 @@
   "nav": "Navigation & actions",
   "music": "Playback & music",
   "content": "Content & notes",
-  "device": "Devices & services"
+  "device": "Devices & services",
+  "social": "Video & social"
  },
  "symbols": [
   {
@@ -313,6 +314,141 @@
    ]
   },
   {
+   "name": "menu",
+   "zh": "菜单",
+   "group": "nav",
+   "codepoint": "E060",
+   "material": [
+    "Menu"
+   ]
+  },
+  {
+   "name": "up",
+   "zh": "置顶 / 回到顶部",
+   "group": "nav",
+   "codepoint": "E061",
+   "material": [
+    "ArrowUpward"
+   ]
+  },
+  {
+   "name": "north_west",
+   "zh": "填入（左上箭头）",
+   "group": "nav",
+   "codepoint": "E062",
+   "material": [
+    "NorthWest"
+   ]
+  },
+  {
+   "name": "delete_sweep",
+   "zh": "清空",
+   "group": "nav",
+   "codepoint": "E063",
+   "material": [
+    "DeleteSweep"
+   ]
+  },
+  {
+   "name": "block",
+   "zh": "拉黑 / 屏蔽",
+   "group": "nav",
+   "codepoint": "E064",
+   "material": [
+    "Block"
+   ]
+  },
+  {
+   "name": "check_box",
+   "zh": "多选",
+   "group": "nav",
+   "codepoint": "E065",
+   "material": [
+    "CheckBox"
+   ]
+  },
+  {
+   "name": "check_circle",
+   "zh": "认证 / 已完成",
+   "group": "nav",
+   "codepoint": "E066",
+   "material": [
+    "CheckCircle"
+   ]
+  },
+  {
+   "name": "link",
+   "zh": "链接",
+   "group": "nav",
+   "codepoint": "E067",
+   "material": [
+    "Link"
+   ]
+  },
+  {
+   "name": "logout",
+   "zh": "退出登录",
+   "group": "nav",
+   "codepoint": "E068",
+   "material": [
+    "Logout"
+   ]
+  },
+  {
+   "name": "lock",
+   "zh": "隐私 / 锁",
+   "group": "nav",
+   "codepoint": "E069",
+   "material": [
+    "Lock"
+   ]
+  },
+  {
+   "name": "bell",
+   "zh": "通知",
+   "group": "nav",
+   "codepoint": "E06A",
+   "material": [
+    "Notifications"
+   ]
+  },
+  {
+   "name": "history",
+   "zh": "历史记录",
+   "group": "nav",
+   "codepoint": "E06B",
+   "material": [
+    "History"
+   ]
+  },
+  {
+   "name": "qr",
+   "zh": "二维码",
+   "group": "nav",
+   "codepoint": "E06C",
+   "material": [
+    "QrCode"
+   ]
+  },
+  {
+   "name": "pin",
+   "zh": "置顶 / 固定",
+   "group": "nav",
+   "codepoint": "E06D",
+   "material": [
+    "PushPin"
+   ]
+  },
+  {
+   "name": "pin_filled",
+   "zh": "已置顶",
+   "group": "nav",
+   "codepoint": "E06E",
+   "material": [
+    "PushPin"
+   ]
+  },
+  {
    "name": "play_arrow",
    "zh": "播放",
    "group": "music",
@@ -445,6 +581,15 @@
    ]
   },
   {
+   "name": "person_filled",
+   "zh": "个人（选中）",
+   "group": "music",
+   "codepoint": "E06F",
+   "material": [
+    "Person"
+   ]
+  },
+  {
    "name": "artist",
    "zh": "艺人",
    "group": "music",
@@ -544,6 +689,24 @@
    "codepoint": "E03A",
    "material": [
     "PlayCircle"
+   ]
+  },
+  {
+   "name": "stop",
+   "zh": "停止",
+   "group": "music",
+   "codepoint": "E070",
+   "material": [
+    "Stop"
+   ]
+  },
+  {
+   "name": "stop_filled",
+   "zh": "停止（实心）",
+   "group": "music",
+   "codepoint": "E071",
+   "material": [
+    "Stop"
    ]
   },
   {
@@ -717,6 +880,31 @@
    "material": []
   },
   {
+   "name": "mic",
+   "zh": "语音输入",
+   "group": "device",
+   "codepoint": "E072",
+   "material": [
+    "Mic"
+   ]
+  },
+  {
+   "name": "keyboard",
+   "zh": "键盘",
+   "group": "device",
+   "codepoint": "E073",
+   "material": [
+    "Keyboard"
+   ]
+  },
+  {
+   "name": "database",
+   "zh": "数据 / 数据库",
+   "group": "device",
+   "codepoint": "E074",
+   "material": []
+  },
+  {
    "name": "note",
    "zh": "笔记",
    "group": "content",
@@ -824,6 +1012,455 @@
    "codepoint": "E05E",
    "material": [
     "ContentCopy"
+   ]
+  },
+  {
+   "name": "brightness",
+   "zh": "亮度",
+   "group": "content",
+   "codepoint": "E075",
+   "material": [
+    "BrightnessMedium"
+   ]
+  },
+  {
+   "name": "dark_mode",
+   "zh": "深色模式",
+   "group": "content",
+   "codepoint": "E076",
+   "material": [
+    "DarkMode"
+   ]
+  },
+  {
+   "name": "palette",
+   "zh": "主题色",
+   "group": "content",
+   "codepoint": "E077",
+   "material": [
+    "Palette"
+   ]
+  },
+  {
+   "name": "image",
+   "zh": "图片",
+   "group": "content",
+   "codepoint": "E078",
+   "material": [
+    "Image"
+   ]
+  },
+  {
+   "name": "camera",
+   "zh": "截图 / 相机",
+   "group": "content",
+   "codepoint": "E079",
+   "material": [
+    "PhotoCamera"
+   ]
+  },
+  {
+   "name": "article",
+   "zh": "专栏 / 文章",
+   "group": "content",
+   "codepoint": "E07A",
+   "material": [
+    "Article"
+   ]
+  },
+  {
+   "name": "calendar",
+   "zh": "日历",
+   "group": "content",
+   "codepoint": "E07B",
+   "material": [
+    "CalendarToday"
+   ]
+  },
+  {
+   "name": "place",
+   "zh": "地点",
+   "group": "content",
+   "codepoint": "E07C",
+   "material": [
+    "Place"
+   ]
+  },
+  {
+   "name": "waves",
+   "zh": "滚动边缘（潮线）",
+   "group": "content",
+   "codepoint": "E07D",
+   "material": [
+    "Waves"
+   ]
+  },
+  {
+   "name": "thumb_up",
+   "zh": "点赞",
+   "group": "social",
+   "codepoint": "E07E",
+   "material": [
+    "ThumbUp"
+   ]
+  },
+  {
+   "name": "thumb_up_filled",
+   "zh": "已点赞",
+   "group": "social",
+   "codepoint": "E07F",
+   "material": [
+    "ThumbUp"
+   ]
+  },
+  {
+   "name": "thumb_down",
+   "zh": "点踩",
+   "group": "social",
+   "codepoint": "E080",
+   "material": [
+    "ThumbDown"
+   ]
+  },
+  {
+   "name": "thumb_down_filled",
+   "zh": "已点踩",
+   "group": "social",
+   "codepoint": "E081",
+   "material": [
+    "ThumbDown"
+   ]
+  },
+  {
+   "name": "flag",
+   "zh": "举报",
+   "group": "social",
+   "codepoint": "E082",
+   "material": [
+    "Flag"
+   ]
+  },
+  {
+   "name": "coin",
+   "zh": "投币",
+   "group": "social",
+   "codepoint": "E083",
+   "material": []
+  },
+  {
+   "name": "coin_filled",
+   "zh": "已投币",
+   "group": "social",
+   "codepoint": "E084",
+   "material": []
+  },
+  {
+   "name": "paw",
+   "zh": "赞（爪印）",
+   "group": "social",
+   "codepoint": "E085",
+   "material": []
+  },
+  {
+   "name": "paw_filled",
+   "zh": "已赞（爪印）",
+   "group": "social",
+   "codepoint": "E086",
+   "material": []
+  },
+  {
+   "name": "comment",
+   "zh": "评论",
+   "group": "social",
+   "codepoint": "E087",
+   "material": [
+    "Comment"
+   ]
+  },
+  {
+   "name": "dialogue",
+   "zh": "对话",
+   "group": "social",
+   "codepoint": "E088",
+   "material": [
+    "Forum"
+   ]
+  },
+  {
+   "name": "reply",
+   "zh": "回复",
+   "group": "social",
+   "codepoint": "E089",
+   "material": [
+    "Reply"
+   ]
+  },
+  {
+   "name": "forward",
+   "zh": "转发",
+   "group": "social",
+   "codepoint": "E08A",
+   "material": [
+    "Forward"
+   ]
+  },
+  {
+   "name": "at",
+   "zh": "@ 提及",
+   "group": "social",
+   "codepoint": "E08B",
+   "material": [
+    "AlternateEmail"
+   ]
+  },
+  {
+   "name": "topic",
+   "zh": "话题 / #",
+   "group": "social",
+   "codepoint": "E08C",
+   "material": [
+    "Tag"
+   ]
+  },
+  {
+   "name": "emoji",
+   "zh": "表情",
+   "group": "social",
+   "codepoint": "E08D",
+   "material": [
+    "EmojiEmotions"
+   ]
+  },
+  {
+   "name": "mail",
+   "zh": "私信",
+   "group": "social",
+   "codepoint": "E08E",
+   "material": [
+    "Mail"
+   ]
+  },
+  {
+   "name": "person_add",
+   "zh": "关注",
+   "group": "social",
+   "codepoint": "E08F",
+   "material": [
+    "PersonAdd"
+   ]
+  },
+  {
+   "name": "person_check",
+   "zh": "已关注",
+   "group": "social",
+   "codepoint": "E090",
+   "material": []
+  },
+  {
+   "name": "quiet_eye",
+   "zh": "悄悄关注",
+   "group": "social",
+   "codepoint": "E091",
+   "material": []
+  },
+  {
+   "name": "quiet_eye_filled",
+   "zh": "悄悄关注中",
+   "group": "social",
+   "codepoint": "E092",
+   "material": []
+  },
+  {
+   "name": "channel",
+   "zh": "频道",
+   "group": "social",
+   "codepoint": "E093",
+   "material": []
+  },
+  {
+   "name": "dynamic",
+   "zh": "动态",
+   "group": "social",
+   "codepoint": "E094",
+   "material": [
+    "Explore"
+   ]
+  },
+  {
+   "name": "dynamic_filled",
+   "zh": "动态（选中）",
+   "group": "social",
+   "codepoint": "E095",
+   "material": [
+    "Explore"
+   ]
+  },
+  {
+   "name": "fire",
+   "zh": "热门",
+   "group": "social",
+   "codepoint": "E096",
+   "material": [
+    "LocalFireDepartment"
+   ]
+  },
+  {
+   "name": "trophy",
+   "zh": "排行榜",
+   "group": "social",
+   "codepoint": "E097",
+   "material": [
+    "EmojiEvents"
+   ]
+  },
+  {
+   "name": "trophy_filled",
+   "zh": "排行榜（选中）",
+   "group": "social",
+   "codepoint": "E098",
+   "material": [
+    "EmojiEvents"
+   ]
+  },
+  {
+   "name": "gift",
+   "zh": "礼物 / 充电",
+   "group": "social",
+   "codepoint": "E099",
+   "material": [
+    "CardGiftcard"
+   ]
+  },
+  {
+   "name": "poll",
+   "zh": "投票",
+   "group": "social",
+   "codepoint": "E09A",
+   "material": [
+    "Poll"
+   ]
+  },
+  {
+   "name": "live",
+   "zh": "直播",
+   "group": "social",
+   "codepoint": "E09B",
+   "material": [
+    "Sensors"
+   ]
+  },
+  {
+   "name": "views",
+   "zh": "播放量",
+   "group": "social",
+   "codepoint": "E09C",
+   "material": []
+  },
+  {
+   "name": "video",
+   "zh": "视频",
+   "group": "social",
+   "codepoint": "E09D",
+   "material": [
+    "Videocam"
+   ]
+  },
+  {
+   "name": "danmaku",
+   "zh": "弹幕",
+   "group": "social",
+   "codepoint": "E09E",
+   "material": []
+  },
+  {
+   "name": "danmaku_off",
+   "zh": "弹幕关",
+   "group": "social",
+   "codepoint": "E09F",
+   "material": []
+  },
+  {
+   "name": "danmaku_top",
+   "zh": "顶部弹幕",
+   "group": "social",
+   "codepoint": "E0A0",
+   "material": []
+  },
+  {
+   "name": "danmaku_bottom",
+   "zh": "底部弹幕",
+   "group": "social",
+   "codepoint": "E0A1",
+   "material": []
+  },
+  {
+   "name": "danmaku_scroll",
+   "zh": "滚动弹幕",
+   "group": "social",
+   "codepoint": "E0A2",
+   "material": []
+  },
+  {
+   "name": "subtitles",
+   "zh": "字幕",
+   "group": "social",
+   "codepoint": "E0A3",
+   "material": [
+    "Subtitles"
+   ]
+  },
+  {
+   "name": "hd",
+   "zh": "画质",
+   "group": "social",
+   "codepoint": "E0A4",
+   "material": [
+    "Hd"
+   ]
+  },
+  {
+   "name": "pip",
+   "zh": "画中画",
+   "group": "social",
+   "codepoint": "E0A5",
+   "material": [
+    "PictureInPicture"
+   ]
+  },
+  {
+   "name": "fullscreen",
+   "zh": "全屏",
+   "group": "social",
+   "codepoint": "E0A6",
+   "material": [
+    "Fullscreen"
+   ]
+  },
+  {
+   "name": "fullscreen_exit",
+   "zh": "退出全屏",
+   "group": "social",
+   "codepoint": "E0A7",
+   "material": [
+    "FullscreenExit"
+   ]
+  },
+  {
+   "name": "replay",
+   "zh": "重播",
+   "group": "social",
+   "codepoint": "E0A8",
+   "material": [
+    "Replay"
+   ]
+  },
+  {
+   "name": "watch_later",
+   "zh": "稍后再看",
+   "group": "social",
+   "codepoint": "E0A9",
+   "material": [
+    "WatchLater"
    ]
   }
  ]

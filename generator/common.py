@@ -13,11 +13,11 @@ sys.path.insert(0, str(GEN / "icons"))
 from geom import to_d  # noqa: E402
 from registry import ORDER, REGISTRY, svg_markup  # noqa: E402
 
-for _m in ("icons_nav", "icons_music", "icons_devices", "icons_content"):
+for _m in ("icons_nav", "icons_music", "icons_devices", "icons_content", "icons_social"):
     importlib.import_module(_m)
 
-GROUP_EN = {"nav": "Navigation & actions", "music": "Playback & music", "content": "Content & notes", "device": "Devices & services"}
-GROUP_ZH = {"nav": "导航与通用", "music": "播放与音乐", "content": "内容与笔记", "device": "设备与服务"}
+GROUP_EN = {"nav": "Navigation & actions", "music": "Playback & music", "content": "Content & notes", "device": "Devices & services", "social": "Video & social"}
+GROUP_ZH = {"nav": "导航与通用", "music": "播放与音乐", "content": "内容与笔记", "device": "设备与服务", "social": "视频与社交"}
 
 REPO_URL = "https://github.com/p2o51/yoin-symbols"
 MAVEN_GROUP = "io.github.p2o51"
@@ -26,7 +26,7 @@ KOTLIN_PACKAGE = "com.gpo.yoin.symbols"
 RES_PREFIX = "ic_yoin_"
 # Directional symbols that flip in right-to-left layouts
 # (Android autoMirror, Flutter matchTextDirection). Media controls do not flip.
-MIRRORED = frozenset({"back", "chevron_left", "chevron_right", "send", "undo"})
+MIRRORED = frozenset({"back", "chevron_left", "chevron_right", "send", "undo", "reply", "forward", "logout", "replay", "danmaku_scroll"})
 NPM_NAME = "yoin-symbols"
 PUB_NAME = "yoin_symbols"
 FONT_FAMILY = "YoinSymbols"

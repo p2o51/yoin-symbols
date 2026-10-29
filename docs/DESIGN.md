@@ -45,19 +45,20 @@ The reference symbols are font outlines on a 960-unit em (960 units = 24 dp, y u
 
 | Shape | Helper in `generator/icons/geom.py` | Typical values |
 | --- | --- | --- |
-| Continuous-curvature container | `squircle(x, y, w, h, r, s)`, the Figma corner-smoothing algorithm | r 3.1–4.0, s 0.6, the bend spreads over 1.6 r |
+| Continuous-curvature container | `squircle(x, y, w, h, r, s)`, the Figma corner-smoothing algorithm; `squircle_box(left, top, right, bottom, reach)` by its edges and the bend's reach (1.6 r) | r 3.1–4.0, s 0.6, the bend spreads over 1.6 r |
 | Rounded polygon | `rounded_poly(points, radii)`, one radius per corner | Triangle tips 0.85–1.0, roof 2.3 |
 | Rounded polyline | `rounded_polyline` | Open shapes: trays, handles |
 | Circle, ellipse, arc | `circle`, `ellipse`, `arc` (degrees, 0° = right, 90° = down) | |
+| Free-form outline | `parse_d(d)`: any SVG path data, arcs and relative commands included, as `M L C Z` | A flame, a paw pad, a palette |
 
 ### Details
 
 - **Dots:** r 0.95 for information dots (slightly more than half the stroke, so they read as heavy as the line); r 1.4 for the three "more" dots.
 - **Chevrons:** 9 × 4.5. Every direction is the same path rotated.
-- **Crossings:** where two lines cross, the lower line breaks 1.05 on each side of the upper one (3.6 centre line to centre line). `knock.cut(path, knock.around(over, 1.8))` cuts real Bézier segments, so the gap survives every export (shuffle, visibility_off, cloud_offline, devices).
+- **Crossings:** where two lines cross, the lower line breaks 1.05 on each side of the upper one (3.6 centre line to centre line). `knock.cut(path, knock.around(over, 1.8))` cuts real Bézier segments, so the gap survives every export (shuffle, visibility_off, cloud_offline, devices, danmaku_off). The gap is for one thing passing behind another; strokes of one object that cross stay joined (add, topic, the ribbon on gift's lid).
 - **Filled twins:** the same centre line, filled and stroked at the same width, so the outer edge sits exactly on the outline version. Holes use even-odd (error_filled, library_filled).
 - **Filled play controls:** play_filled, pause_filled and skip_*_filled are straight-edged polygons whose corners come from the 0.75 round join. Play and pause have the same number of points, so they morph into each other.
-- **Right to left:** back, chevron_left, chevron_right, send and undo flip in right-to-left layouts (Android `autoMirror`, Flutter `matchTextDirection`). Media controls keep their direction, as Material recommends.
+- **Right to left:** back, chevron_left, chevron_right, send, undo, reply, forward, logout, replay and danmaku_scroll flip in right-to-left layouts (Android `autoMirror`, Flutter `matchTextDirection`). Media controls keep their direction, as Material recommends.
 
 ### Colour
 
@@ -80,6 +81,7 @@ Symbols with moving parts keep those parts separate: an `id` in the SVG, a group
 | equalizer | `bar-0` … `bar-4` |
 | sparkle | `sparkle-main`, `sparkle-stick`, `sparkle-dot-0`, `sparkle-dot-1` |
 | repeat_one | `one` |
+| paw, paw_filled | `toe-0` … `toe-3`, `pad` |
 
 ## Logo
 

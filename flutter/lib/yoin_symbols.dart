@@ -166,6 +166,68 @@ abstract final class YoinSymbols {
       fontPackage: fontPackage,
       matchTextDirection: true);
 
+  /// 菜单 · `menu`
+  static const IconData menu =
+      IconData(0xe060, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 置顶 / 回到顶部 · `up`
+  static const IconData up =
+      IconData(0xe061, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 填入（左上箭头） · `north_west`
+  static const IconData northWest =
+      IconData(0xe062, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 清空 · `delete_sweep`
+  static const IconData deleteSweep =
+      IconData(0xe063, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 拉黑 / 屏蔽 · `block`
+  static const IconData block =
+      IconData(0xe064, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 多选 · `check_box`
+  static const IconData checkBox =
+      IconData(0xe065, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 认证 / 已完成 · `check_circle`
+  static const IconData checkCircle =
+      IconData(0xe066, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 链接 · `link`
+  static const IconData link =
+      IconData(0xe067, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 退出登录 · `logout`
+  static const IconData logout = IconData(0xe068,
+      fontFamily: fontFamily,
+      fontPackage: fontPackage,
+      matchTextDirection: true);
+
+  /// 隐私 / 锁 · `lock`
+  static const IconData lock =
+      IconData(0xe069, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 通知 · `bell`
+  static const IconData bell =
+      IconData(0xe06a, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 历史记录 · `history`
+  static const IconData history =
+      IconData(0xe06b, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 二维码 · `qr`
+  static const IconData qr =
+      IconData(0xe06c, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 置顶 / 固定 · `pin`
+  static const IconData pin =
+      IconData(0xe06d, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 已置顶 · `pin_filled`
+  static const IconData pinFilled =
+      IconData(0xe06e, fontFamily: fontFamily, fontPackage: fontPackage);
+
   /// 播放 · `play_arrow`
   static const IconData playArrow =
       IconData(0xe01f, fontFamily: fontFamily, fontPackage: fontPackage);
@@ -230,6 +292,10 @@ abstract final class YoinSymbols {
   static const IconData person =
       IconData(0xe02e, fontFamily: fontFamily, fontPackage: fontPackage);
 
+  /// 个人（选中） · `person_filled`
+  static const IconData personFilled =
+      IconData(0xe06f, fontFamily: fontFamily, fontPackage: fontPackage);
+
   /// 艺人 · `artist`
   static const IconData artist =
       IconData(0xe02f, fontFamily: fontFamily, fontPackage: fontPackage);
@@ -277,6 +343,14 @@ abstract final class YoinSymbols {
   /// 播放（圆形） · `play_circle`
   static const IconData playCircle =
       IconData(0xe03a, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 停止 · `stop`
+  static const IconData stop =
+      IconData(0xe070, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 停止（实心） · `stop_filled`
+  static const IconData stopFilled =
+      IconData(0xe071, fontFamily: fontFamily, fontPackage: fontPackage);
 
   /// 投屏 · `cast`
   static const IconData cast =
@@ -358,6 +432,18 @@ abstract final class YoinSymbols {
   static const IconData volumeMute =
       IconData(0xe04e, fontFamily: fontFamily, fontPackage: fontPackage);
 
+  /// 语音输入 · `mic`
+  static const IconData mic =
+      IconData(0xe072, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 键盘 · `keyboard`
+  static const IconData keyboard =
+      IconData(0xe073, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 数据 / 数据库 · `database`
+  static const IconData database =
+      IconData(0xe074, fontFamily: fontFamily, fontPackage: fontPackage);
+
   /// 笔记 · `note`
   static const IconData note =
       IconData(0xe04f, fontFamily: fontFamily, fontPackage: fontPackage);
@@ -414,6 +500,226 @@ abstract final class YoinSymbols {
   static const IconData copy =
       IconData(0xe05e, fontFamily: fontFamily, fontPackage: fontPackage);
 
+  /// 亮度 · `brightness`
+  static const IconData brightness =
+      IconData(0xe075, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 深色模式 · `dark_mode`
+  static const IconData darkMode =
+      IconData(0xe076, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 主题色 · `palette`
+  static const IconData palette =
+      IconData(0xe077, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 图片 · `image`
+  static const IconData image =
+      IconData(0xe078, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 截图 / 相机 · `camera`
+  static const IconData camera =
+      IconData(0xe079, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 专栏 / 文章 · `article`
+  static const IconData article =
+      IconData(0xe07a, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 日历 · `calendar`
+  static const IconData calendar =
+      IconData(0xe07b, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 地点 · `place`
+  static const IconData place =
+      IconData(0xe07c, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 滚动边缘（潮线） · `waves`
+  static const IconData waves =
+      IconData(0xe07d, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 点赞 · `thumb_up`
+  static const IconData thumbUp =
+      IconData(0xe07e, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 已点赞 · `thumb_up_filled`
+  static const IconData thumbUpFilled =
+      IconData(0xe07f, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 点踩 · `thumb_down`
+  static const IconData thumbDown =
+      IconData(0xe080, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 已点踩 · `thumb_down_filled`
+  static const IconData thumbDownFilled =
+      IconData(0xe081, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 举报 · `flag`
+  static const IconData flag =
+      IconData(0xe082, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 投币 · `coin`
+  static const IconData coin =
+      IconData(0xe083, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 已投币 · `coin_filled`
+  static const IconData coinFilled =
+      IconData(0xe084, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 赞（爪印） · `paw`
+  static const IconData paw =
+      IconData(0xe085, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 已赞（爪印） · `paw_filled`
+  static const IconData pawFilled =
+      IconData(0xe086, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 评论 · `comment`
+  static const IconData comment =
+      IconData(0xe087, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 对话 · `dialogue`
+  static const IconData dialogue =
+      IconData(0xe088, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 回复 · `reply`
+  static const IconData reply = IconData(0xe089,
+      fontFamily: fontFamily,
+      fontPackage: fontPackage,
+      matchTextDirection: true);
+
+  /// 转发 · `forward`
+  static const IconData forward = IconData(0xe08a,
+      fontFamily: fontFamily,
+      fontPackage: fontPackage,
+      matchTextDirection: true);
+
+  /// @ 提及 · `at`
+  static const IconData at =
+      IconData(0xe08b, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 话题 / # · `topic`
+  static const IconData topic =
+      IconData(0xe08c, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 表情 · `emoji`
+  static const IconData emoji =
+      IconData(0xe08d, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 私信 · `mail`
+  static const IconData mail =
+      IconData(0xe08e, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 关注 · `person_add`
+  static const IconData personAdd =
+      IconData(0xe08f, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 已关注 · `person_check`
+  static const IconData personCheck =
+      IconData(0xe090, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 悄悄关注 · `quiet_eye`
+  static const IconData quietEye =
+      IconData(0xe091, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 悄悄关注中 · `quiet_eye_filled`
+  static const IconData quietEyeFilled =
+      IconData(0xe092, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 频道 · `channel`
+  static const IconData channel =
+      IconData(0xe093, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 动态 · `dynamic`
+  static const IconData dynamic =
+      IconData(0xe094, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 动态（选中） · `dynamic_filled`
+  static const IconData dynamicFilled =
+      IconData(0xe095, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 热门 · `fire`
+  static const IconData fire =
+      IconData(0xe096, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 排行榜 · `trophy`
+  static const IconData trophy =
+      IconData(0xe097, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 排行榜（选中） · `trophy_filled`
+  static const IconData trophyFilled =
+      IconData(0xe098, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 礼物 / 充电 · `gift`
+  static const IconData gift =
+      IconData(0xe099, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 投票 · `poll`
+  static const IconData poll =
+      IconData(0xe09a, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 直播 · `live`
+  static const IconData live =
+      IconData(0xe09b, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 播放量 · `views`
+  static const IconData views =
+      IconData(0xe09c, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 视频 · `video`
+  static const IconData video =
+      IconData(0xe09d, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 弹幕 · `danmaku`
+  static const IconData danmaku =
+      IconData(0xe09e, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 弹幕关 · `danmaku_off`
+  static const IconData danmakuOff =
+      IconData(0xe09f, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 顶部弹幕 · `danmaku_top`
+  static const IconData danmakuTop =
+      IconData(0xe0a0, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 底部弹幕 · `danmaku_bottom`
+  static const IconData danmakuBottom =
+      IconData(0xe0a1, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 滚动弹幕 · `danmaku_scroll`
+  static const IconData danmakuScroll = IconData(0xe0a2,
+      fontFamily: fontFamily,
+      fontPackage: fontPackage,
+      matchTextDirection: true);
+
+  /// 字幕 · `subtitles`
+  static const IconData subtitles =
+      IconData(0xe0a3, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 画质 · `hd`
+  static const IconData hd =
+      IconData(0xe0a4, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 画中画 · `pip`
+  static const IconData pip =
+      IconData(0xe0a5, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 全屏 · `fullscreen`
+  static const IconData fullscreen =
+      IconData(0xe0a6, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 退出全屏 · `fullscreen_exit`
+  static const IconData fullscreenExit =
+      IconData(0xe0a7, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 重播 · `replay`
+  static const IconData replay = IconData(0xe0a8,
+      fontFamily: fontFamily,
+      fontPackage: fontPackage,
+      matchTextDirection: true);
+
+  /// 稍后再看 · `watch_later`
+  static const IconData watchLater =
+      IconData(0xe0a9, fontFamily: fontFamily, fontPackage: fontPackage);
+
   /// Every symbol by its canonical snake_case name, for galleries and pickers.
   static const Map<String, IconData> all = <String, IconData>{
     'home': home,
@@ -450,6 +756,21 @@ abstract final class YoinSymbols {
     'visibility_off': visibilityOff,
     'code': code,
     'send': send,
+    'menu': menu,
+    'up': up,
+    'north_west': northWest,
+    'delete_sweep': deleteSweep,
+    'block': block,
+    'check_box': checkBox,
+    'check_circle': checkCircle,
+    'link': link,
+    'logout': logout,
+    'lock': lock,
+    'bell': bell,
+    'history': history,
+    'qr': qr,
+    'pin': pin,
+    'pin_filled': pinFilled,
     'play_arrow': playArrow,
     'play_filled': playFilled,
     'pause': pause,
@@ -466,6 +787,7 @@ abstract final class YoinSymbols {
     'music_note': musicNote,
     'album': album,
     'person': person,
+    'person_filled': personFilled,
     'artist': artist,
     'favorite': favorite,
     'favorite_filled': favoriteFilled,
@@ -478,6 +800,8 @@ abstract final class YoinSymbols {
     'sparkle': sparkle,
     'sparkle_filled': sparkleFilled,
     'play_circle': playCircle,
+    'stop': stop,
+    'stop_filled': stopFilled,
     'cast': cast,
     'cast_connected': castConnected,
     'smartphone': smartphone,
@@ -498,6 +822,9 @@ abstract final class YoinSymbols {
     'download_done': downloadDone,
     'volume_up': volumeUp,
     'volume_mute': volumeMute,
+    'mic': mic,
+    'keyboard': keyboard,
+    'database': database,
     'note': note,
     'edit_note': editNote,
     'reviews': reviews,
@@ -512,5 +839,58 @@ abstract final class YoinSymbols {
     'library_add': libraryAdd,
     'library_added': libraryAdded,
     'copy': copy,
+    'brightness': brightness,
+    'dark_mode': darkMode,
+    'palette': palette,
+    'image': image,
+    'camera': camera,
+    'article': article,
+    'calendar': calendar,
+    'place': place,
+    'waves': waves,
+    'thumb_up': thumbUp,
+    'thumb_up_filled': thumbUpFilled,
+    'thumb_down': thumbDown,
+    'thumb_down_filled': thumbDownFilled,
+    'flag': flag,
+    'coin': coin,
+    'coin_filled': coinFilled,
+    'paw': paw,
+    'paw_filled': pawFilled,
+    'comment': comment,
+    'dialogue': dialogue,
+    'reply': reply,
+    'forward': forward,
+    'at': at,
+    'topic': topic,
+    'emoji': emoji,
+    'mail': mail,
+    'person_add': personAdd,
+    'person_check': personCheck,
+    'quiet_eye': quietEye,
+    'quiet_eye_filled': quietEyeFilled,
+    'channel': channel,
+    'dynamic': dynamic,
+    'dynamic_filled': dynamicFilled,
+    'fire': fire,
+    'trophy': trophy,
+    'trophy_filled': trophyFilled,
+    'gift': gift,
+    'poll': poll,
+    'live': live,
+    'views': views,
+    'video': video,
+    'danmaku': danmaku,
+    'danmaku_off': danmakuOff,
+    'danmaku_top': danmakuTop,
+    'danmaku_bottom': danmakuBottom,
+    'danmaku_scroll': danmakuScroll,
+    'subtitles': subtitles,
+    'hd': hd,
+    'pip': pip,
+    'fullscreen': fullscreen,
+    'fullscreen_exit': fullscreenExit,
+    'replay': replay,
+    'watch_later': watchLater,
   };
 }
