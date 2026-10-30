@@ -1,6 +1,6 @@
 # yoin-symbols
 
-Light, rounded line icons with continuous-curvature containers: 91 symbols on a 24 × 24 grid with a 1.5 stroke, round caps and round joins. SVG strings, React components, an SVG sprite and an icon font, all from one source.
+Light, rounded line icons with continuous-curvature containers: 170 symbols on a 24 × 24 grid with a 1.5 stroke, round caps and round joins. SVG strings, React components, an SVG sprite and an icon font, all from one source.
 
 [Gallery](https://p2o51.github.io/yoin-symbols/) · [GitHub](https://github.com/p2o51/yoin-symbols) · MIT
 
