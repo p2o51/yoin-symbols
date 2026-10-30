@@ -54,3 +54,5 @@ Refining a drawing is a patch release. Renaming or removing a symbol breaks ever
 ## Figma
 
 The Figma file is maintained by hand from the same drawings. After a release that adds or changes symbols, import the new SVGs from `svg/` into the Symbols page, make them components with the same name and bind their strokes to `icon/default`.
+
+`docs/cover.png` (1920 × 960) and `docs/og.png` (1200 × 600) are exports of the Cover page's frame. When the cover changes, edit it in Figma and export it again at those sizes.

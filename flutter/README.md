@@ -1,6 +1,6 @@
 # yoin_symbols
 
-Light, rounded line icons with continuous-curvature containers for Flutter: 91 symbols on a 24 × 24 grid with a 1.5 stroke, shipped as an icon font for the `Icon` widget.
+Light, rounded line icons with continuous-curvature containers for Flutter: 170 symbols on a 24 × 24 grid with a 1.5 stroke, shipped as an icon font for the `Icon` widget.
 
 [Gallery](https://p2o51.github.io/yoin-symbols/) · [GitHub](https://github.com/p2o51/yoin-symbols) · MIT
 
