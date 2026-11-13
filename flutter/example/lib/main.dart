@@ -1,3 +1,8 @@
+// Flutter 3.47 deprecated package:flutter/material.dart in favour of
+// package:material_ui. The gallery keeps the SDK's Material so it still runs on
+// every Flutter the package supports (>= 3.10).
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:yoin_symbols/yoin_symbols.dart';
 
