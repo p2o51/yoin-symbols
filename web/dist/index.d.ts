@@ -111,6 +111,9 @@ export type YoinSymbolName =
   | "explicit"
   | "sort"
   | "filter"
+  | "view_timeline"
+  | "view_cards"
+  | "view_list"
   | "sleep"
   | "light_mode"
   | "speed"
@@ -392,6 +395,12 @@ export declare const Explicit: string;
 export declare const Sort: string;
 /** 筛选 · filter */
 export declare const Filter: string;
+/** 时间线视图 · view_timeline */
+export declare const ViewTimeline: string;
+/** 卡片视图 · view_cards */
+export declare const ViewCards: string;
+/** 列表视图 · view_list */
+export declare const ViewList: string;
 /** 睡眠定时 · sleep */
 export declare const Sleep: string;
 /** 屏幕常亮 / 浅色 · light_mode */

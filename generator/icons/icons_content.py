@@ -66,6 +66,38 @@ def _():
     return [S(line(4.25, 7, 19.75, 7)), S(line(7.25, 12, 16.75, 12)), S(line(10.25, 17, 13.75, 17))]
 
 
+@icon("view_timeline", "content", "时间线视图")
+def _():
+    # a spine threaded through two open nodes, an entry beside each; the spine meets each ring
+    x, r, ys = 7.0, 2.35, (8.0, 16.0)
+    spine = [line(x, 3.75, x, ys[0] - r), line(x, ys[0] + r, x, ys[1] - r), line(x, ys[1] + r, x, 20.25)]
+    return [S(p) for p in spine] + [
+        S(circle(x, ys[0], r)),
+        S(circle(x, ys[1], r)),
+        S(line(12.5, ys[0], 19.75, ys[0])),
+        S(line(12.5, ys[1], 17.0, ys[1])),
+    ]
+
+
+@icon("view_cards", "content", "卡片视图", replaces=["Icons.Rounded.Dashboard"])
+def _():
+    # two columns of cards in a staggered (masonry) layout, the qr finders' 3.5 gutter
+    reach = 2.0
+    return [
+        S(squircle_box(3.75, 3.75, 10.25, 12.75, reach)),
+        S(squircle_box(3.75, 16.25, 10.25, 20.25, reach)),
+        S(squircle_box(13.75, 3.75, 20.25, 7.75, reach)),
+        S(squircle_box(13.75, 11.25, 20.25, 20.25, reach)),
+    ]
+
+
+@icon("view_list", "content", "列表视图", replaces=["Icons.AutoMirrored.Rounded.ViewList"])
+def _():
+    # rows with a bullet each, so it never reads as menu or sort
+    ys = (7.0, 12.0, 17.0)
+    return [F(join(*(circle(5.25, y, 0.95) for y in ys)))] + [S(line(9.25, y, 19.75, y)) for y in ys]
+
+
 def crescent(c1=(12.0, 12.0), r1=8.3, c2=(16.3, 7.7), r2=6.9):
     (x1, y1), (x2, y2) = c1, c2
     d = math.hypot(x2 - x1, y2 - y1)

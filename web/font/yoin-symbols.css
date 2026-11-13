@@ -129,6 +129,9 @@
 .ys-explicit::before { content: "\e053"; }
 .ys-sort::before { content: "\e054"; }
 .ys-filter::before { content: "\e055"; }
+.ys-view-timeline::before { content: "\e0aa"; }
+.ys-view-cards::before { content: "\e0ab"; }
+.ys-view-list::before { content: "\e0ac"; }
 .ys-sleep::before { content: "\e056"; }
 .ys-light-mode::before { content: "\e05f"; }
 .ys-speed::before { content: "\e057"; }

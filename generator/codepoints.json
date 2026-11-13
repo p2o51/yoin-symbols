@@ -168,5 +168,8 @@
  "fullscreen": 57510,
  "fullscreen_exit": 57511,
  "replay": 57512,
- "watch_later": 57513
+ "watch_later": 57513,
+ "view_timeline": 57514,
+ "view_cards": 57515,
+ "view_list": 57516
 }

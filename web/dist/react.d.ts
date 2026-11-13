@@ -232,6 +232,12 @@ export declare const Explicit: YoinSymbolComponent;
 export declare const Sort: YoinSymbolComponent;
 /** 筛选 · filter */
 export declare const Filter: YoinSymbolComponent;
+/** 时间线视图 · view_timeline */
+export declare const ViewTimeline: YoinSymbolComponent;
+/** 卡片视图 · view_cards */
+export declare const ViewCards: YoinSymbolComponent;
+/** 列表视图 · view_list */
+export declare const ViewList: YoinSymbolComponent;
 /** 睡眠定时 · sleep */
 export declare const Sleep: YoinSymbolComponent;
 /** 屏幕常亮 / 浅色 · light_mode */
@@ -464,6 +470,9 @@ export declare const InsightsIcon: YoinSymbolComponent;
 export declare const ExplicitIcon: YoinSymbolComponent;
 export declare const SortIcon: YoinSymbolComponent;
 export declare const FilterIcon: YoinSymbolComponent;
+export declare const ViewTimelineIcon: YoinSymbolComponent;
+export declare const ViewCardsIcon: YoinSymbolComponent;
+export declare const ViewListIcon: YoinSymbolComponent;
 export declare const SleepIcon: YoinSymbolComponent;
 export declare const LightModeIcon: YoinSymbolComponent;
 export declare const SpeedIcon: YoinSymbolComponent;
