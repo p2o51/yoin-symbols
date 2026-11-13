@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- 3 new symbols for switching how a page lays out its items (content & notes): `view_timeline` (a spine through two open nodes, an entry beside each), `view_cards` (two columns of cards, staggered; replaces `Icons.Rounded.Dashboard`) and `view_list` (bulleted rows; replaces `Icons.AutoMirrored.Rounded.ViewList`). The bullets set `view_list` apart from `menu`, `sort` and `filter`. `view_timeline` and `view_list` flip in right-to-left layouts.
 - 74 new symbols from the Paw apps (PiliPaw, WeiPaw, CronPaw, PipePaw), which now take every icon from here: a new group, video & social (`social`: thumb_up, coin, paw, comment, danmaku, fullscreen, pip, hd, replay, …), general symbols in the existing groups (menu, link, lock, bell, history, block, check_box, calendar, image, camera, mic, keyboard, …), and the filled twins person_filled, pin_filled and stop_filled. `reply`, `forward`, `logout`, `replay` and `danmaku_scroll` flip in right-to-left layouts; the paw's toes and pad are parts (`toe-0` … `toe-3`, `pad`).
 - `sparkle` and `sparkle_filled` are now a short wand with the star at its tip and two specks of light, instead of the large and small star every AI feature uses. `rememberSparkleSymbolPainter` turns the star and blinks the specks; the SVG parts are `sparkle-main`, `sparkle-stick`, `sparkle-dot-0` and `sparkle-dot-1`.
 - `star` and `star_filled` are a size larger (outer radius 8.85 → 10.4), as heavy as `favorite`.

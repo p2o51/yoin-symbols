@@ -962,6 +962,31 @@
    "material": []
   },
   {
+   "name": "view_timeline",
+   "zh": "时间线视图",
+   "group": "content",
+   "codepoint": "E0AA",
+   "material": []
+  },
+  {
+   "name": "view_cards",
+   "zh": "卡片视图",
+   "group": "content",
+   "codepoint": "E0AB",
+   "material": [
+    "Dashboard"
+   ]
+  },
+  {
+   "name": "view_list",
+   "zh": "列表视图",
+   "group": "content",
+   "codepoint": "E0AC",
+   "material": [
+    "ViewList"
+   ]
+  },
+  {
    "name": "sleep",
    "zh": "睡眠定时",
    "group": "content",

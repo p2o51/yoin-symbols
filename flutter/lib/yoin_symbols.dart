@@ -472,6 +472,22 @@ abstract final class YoinSymbols {
   static const IconData filter =
       IconData(0xe055, fontFamily: fontFamily, fontPackage: fontPackage);
 
+  /// 时间线视图 · `view_timeline`
+  static const IconData viewTimeline = IconData(0xe0aa,
+      fontFamily: fontFamily,
+      fontPackage: fontPackage,
+      matchTextDirection: true);
+
+  /// 卡片视图 · `view_cards`
+  static const IconData viewCards =
+      IconData(0xe0ab, fontFamily: fontFamily, fontPackage: fontPackage);
+
+  /// 列表视图 · `view_list`
+  static const IconData viewList = IconData(0xe0ac,
+      fontFamily: fontFamily,
+      fontPackage: fontPackage,
+      matchTextDirection: true);
+
   /// 睡眠定时 · `sleep`
   static const IconData sleep =
       IconData(0xe056, fontFamily: fontFamily, fontPackage: fontPackage);
@@ -832,6 +848,9 @@ abstract final class YoinSymbols {
     'explicit': explicit,
     'sort': sort,
     'filter': filter,
+    'view_timeline': viewTimeline,
+    'view_cards': viewCards,
+    'view_list': viewList,
     'sleep': sleep,
     'light_mode': lightMode,
     'speed': speed,
